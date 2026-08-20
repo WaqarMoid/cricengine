@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">CricEngine</string>
+    <string name="title_activity_main">CricEngine</string>
+    <string name="package_name">com.cricengine.app</string>
+    <string name="custom_url_scheme">com.cricengine.app</string>
+</resources>
