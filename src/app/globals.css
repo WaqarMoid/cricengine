@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-raleway), 'Raleway', sans-serif;
+  --font-heading: var(--font-montserrat), 'Montserrat', sans-serif;
+  --font-editorial: var(--font-montserrat), 'Montserrat', sans-serif;
+  --font-mono: var(--font-raleway), 'Raleway', monospace;
+
+  --color-ecb-navy: #001838;
+  --color-ecb-navy-dark: #000F24;
+  --color-ecb-blue: #0066CC;
+  --color-ecb-blue-light: #E0F2FE;
+  --color-ecb-green: #059669;
+  --color-ecb-gold: #D97706;
+  --color-ecb-red: #DC2626;
+
+  --color-bg-base: #F8FAFC;
+  --color-bg-card: #FFFFFF;
+  --color-border-subtle: #E2E8F0;
+  --color-border-strong: #CBD5E1;
+
+  --color-text-main: #0F172A;
+  --color-text-muted: #64748B;
+  --color-text-subtle: #94A3B8;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: #F8FAFC;
+  color: #0F172A;
+  font-family: var(--font-raleway), 'Raleway', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading, .font-editorial {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* Crisp, readable numbers using Raleway tabular figures */
+.stat-number, .font-mono, td {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+
+/* Elegant scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* 3D Glass card & subtle elevation */
+.card-hover-3d {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover-3d:hover {
+  transform: translateY(-3px) scale(1.005);
+  box-shadow: 0 20px 25px -5px rgba(0, 24, 56, 0.08), 0 8px 10px -6px rgba(0, 24, 56, 0.04);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+

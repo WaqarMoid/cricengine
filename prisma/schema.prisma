@@ -1,0 +1,147 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum BattingStyle {
+  RIGHT_HAND
+  LEFT_HAND
+}
+
+enum BowlingStyle {
+  RIGHT_ARM_FAST
+  RIGHT_ARM_SPIN
+  LEFT_ARM_FAST
+  LEFT_ARM_SPIN
+  NONE
+}
+
+enum MatchStatus {
+  SCHEDULED
+  IN_PROGRESS
+  INNINGS_BREAK
+  COMPLETED
+  ABANDONED
+}
+
+enum TossDecision {
+  BAT
+  BOWL
+}
+
+enum ExtraType {
+  NONE
+  WIDE
+  NO_BALL
+  BYE
+  LEG_BYE
+  PENALTY
+}
+
+enum WicketType {
+  NONE
+  BOWLED
+  CAUGHT
+  LBW
+  RUN_OUT
+  STUMPED
+  HIT_WICKET
+  RETIRED
+}
+
+model League {
+  id        String   @id @default(uuid())
+  name      String
+  matches   Match[]
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("leagues")
+}
+
+model Player {
+  id           String        @id @default(uuid())
+  name         String
+  battingStyle BattingStyle? @map("batting_style")
+  bowlingStyle BowlingStyle? @default(NONE) @map("bowling_style")
+  avatarUrl    String?       @map("avatar_url")
+  createdAt    DateTime      @default(now()) @map("created_at")
+
+  battingEvents    BallEvent[] @relation("Striker")
+  nonStrikerEvents BallEvent[] @relation("NonStriker")
+  bowlingEvents    BallEvent[] @relation("Bowler")
+  dismissals       BallEvent[] @relation("DismissedPlayer")
+  fieldings        BallEvent[] @relation("Fielder")
+
+  @@map("players")
+}
+
+model Match {
+  id             String       @id @default(uuid())
+  leagueId       String?      @map("league_id")
+  league         League?      @relation(fields: [leagueId], references: [id])
+  teamAName      String       @map("team_a_name")
+  teamBName      String       @map("team_b_name")
+  oversLimit     Int          @default(20) @map("overs_limit")
+  status         MatchStatus  @default(SCHEDULED)
+  tossWinner     String?      @map("toss_winner")
+  tossDecision   TossDecision? @map("toss_decision")
+  currentInnings Int          @default(1) @map("current_innings")
+  scorerPin      String       @default("") @map("scorer_pin")
+  
+  // Store team player IDs as JSON arrays
+  teamAPlayerIds String[]     @map("team_a_player_ids")
+  teamBPlayerIds String[]     @map("team_b_player_ids")
+  
+  ballEvents     BallEvent[]
+  createdAt      DateTime     @default(now()) @map("created_at")
+
+  @@map("matches")
+}
+
+model BallEvent {
+  id          String   @id @default(uuid())
+  matchId     String   @map("match_id")
+  match       Match    @relation(fields: [matchId], references: [id])
+  inningsNo   Int      @map("innings_no")
+  overNumber  Int      @map("over_number")
+  ballInOver  Int      @map("ball_in_over")
+  sequenceNo  Int      @default(autoincrement()) @map("sequence_no")
+
+  // Actors
+  strikerId    String  @map("striker_id")
+  striker      Player  @relation("Striker", fields: [strikerId], references: [id])
+  nonStrikerId String  @map("non_striker_id")
+  nonStriker   Player  @relation("NonStriker", fields: [nonStrikerId], references: [id])
+  bowlerId     String  @map("bowler_id")
+  bowler       Player  @relation("Bowler", fields: [bowlerId], references: [id])
+
+  // Scoring
+  runsOffBat      Int       @default(0) @map("runs_off_bat")
+  extras          Int       @default(0)
+  extraType       ExtraType @default(NONE) @map("extra_type")
+  isLegalDelivery Boolean   @default(true) @map("is_legal_delivery")
+
+  // Dismissals
+  isWicket          Boolean    @default(false) @map("is_wicket")
+  wicketType        WicketType @default(NONE) @map("wicket_type")
+  dismissedPlayerId String?    @map("dismissed_player_id")
+  dismissedPlayer   Player?    @relation("DismissedPlayer", fields: [dismissedPlayerId], references: [id])
+  fielderId         String?    @map("fielder_id")
+  fielder           Player?    @relation("Fielder", fields: [fielderId], references: [id])
+
+  // Spatial Telemetry
+  shotX      Float?  @map("shot_x")
+  shotY      Float?  @map("shot_y")
+  shotZone   String? @map("shot_zone")
+  pitchLine  String? @map("pitch_line")
+  pitchLength String? @map("pitch_length")
+
+  isUndone  Boolean  @default(false) @map("is_undone")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([matchId, inningsNo, sequenceNo], map: "idx_match_events")
+  @@map("ball_events")
+}
