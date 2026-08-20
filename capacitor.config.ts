@@ -5,8 +5,11 @@ const config: CapacitorConfig = {
   appName: 'CricEngine',
   webDir: 'out',
   server: {
+    url: 'https://cricengine.vercel.app',
+    cleartext: true,
     androidScheme: 'https',
   },
 };
 
 export default config;
+
