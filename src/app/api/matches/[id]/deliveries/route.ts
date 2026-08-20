@@ -31,7 +31,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
 
     // 1. Check if striker or non-striker is already out (Cricket Law 25)
     const alreadyOutPlayerIds = new Set(
-      existingEvents.filter(e => e.isWicket && e.dismissedPlayerId).map(e => e.dismissedPlayerId!)
+      existingEvents.filter((e: any) => e.isWicket && e.dismissedPlayerId).map((e: any) => e.dismissedPlayerId!)
     )
     if (alreadyOutPlayerIds.has(data.strikerId)) {
       return NextResponse.json(
@@ -48,14 +48,14 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
 
     // 2. Calculate current position
     const legalBalls = existingEvents.filter(
-      e => e.extraType !== 'WIDE' && e.extraType !== 'NO_BALL'
+      (e: any) => e.extraType !== 'WIDE' && e.extraType !== 'NO_BALL'
     ).length
     const completedOvers = Math.floor(legalBalls / 6)
     const ballsInCurrentOver = legalBalls % 6
 
     // 3. Consecutive over check (Cricket Law 21.7)
     if (completedOvers > 0 && ballsInCurrentOver === 0 && existingEvents.length > 0) {
-      const prevOverEvents = existingEvents.filter(e => e.overNumber === completedOvers - 1)
+      const prevOverEvents = existingEvents.filter((e: any) => e.overNumber === completedOvers - 1)
       if (prevOverEvents.length > 0) {
         const lastBowlerId = prevOverEvents[prevOverEvents.length - 1].bowlerId
         if (data.bowlerId === lastBowlerId) {

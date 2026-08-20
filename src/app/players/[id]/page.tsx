@@ -41,10 +41,10 @@ export default async function PlayerProfilePage({ params }: PageProps) {
     where: { bowlerId: id, isUndone: false },
   })
 
-  const totalRuns = battingEvents.reduce((sum, e) => sum + e.runsOffBat, 0)
-  const ballsFaced = battingEvents.filter(e => e.extraType !== 'WIDE').length
-  const fours = battingEvents.filter(e => e.runsOffBat === 4).length
-  const sixes = battingEvents.filter(e => e.runsOffBat === 6).length
+  const totalRuns = battingEvents.reduce((sum: number, e: any) => sum + e.runsOffBat, 0)
+  const ballsFaced = battingEvents.filter((e: any) => e.extraType !== 'WIDE').length
+  const fours = battingEvents.filter((e: any) => e.runsOffBat === 4).length
+  const sixes = battingEvents.filter((e: any) => e.runsOffBat === 6).length
   const strikeRate = ballsFaced > 0 ? (totalRuns / ballsFaced) * 100 : 0
 
   const dismissals = await prisma.ballEvent.count({
@@ -53,12 +53,12 @@ export default async function PlayerProfilePage({ params }: PageProps) {
   const battingAverage = dismissals > 0 ? totalRuns / dismissals : totalRuns
 
   const wicketsTaken = bowlingEvents.filter(
-    e => e.isWicket && e.wicketType !== 'RUN_OUT' && e.wicketType !== 'RETIRED'
+    (e: any) => e.isWicket && e.wicketType !== 'RUN_OUT' && e.wicketType !== 'RETIRED'
   ).length
   const legalBowlingBalls = bowlingEvents.filter(
-    e => e.extraType !== 'WIDE' && e.extraType !== 'NO_BALL'
+    (e: any) => e.extraType !== 'WIDE' && e.extraType !== 'NO_BALL'
   ).length
-  const runsConceded = bowlingEvents.reduce((sum, e) => {
+  const runsConceded = bowlingEvents.reduce((sum: number, e: any) => {
     if (e.extraType === 'WIDE') return sum + 1 + e.extras
     if (e.extraType === 'NO_BALL') return sum + 1 + e.runsOffBat
     if (e.extraType === 'BYE' || e.extraType === 'LEG_BYE') return sum
@@ -67,8 +67,8 @@ export default async function PlayerProfilePage({ params }: PageProps) {
   const bowlingEconomy = legalBowlingBalls > 0 ? runsConceded / (legalBowlingBalls / 6) : 0
 
   const shots: Shot[] = battingEvents
-    .filter(e => e.shotX !== null && e.shotY !== null)
-    .map(e => ({ x: e.shotX!, y: e.shotY!, runs: e.runsOffBat, zone: e.shotZone }))
+    .filter((e: any) => e.shotX !== null && e.shotY !== null)
+    .map((e: any) => ({ x: e.shotX!, y: e.shotY!, runs: e.runsOffBat, zone: e.shotZone }))
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-[#09090B] pb-20">
@@ -142,7 +142,7 @@ export default async function PlayerProfilePage({ params }: PageProps) {
               <div className="text-xs text-slate-400 py-12 text-center font-light">No deliveries logged for this player yet.</div>
             ) : (
               <div className="space-y-2 max-h-[380px] overflow-y-auto pr-1">
-                {battingEvents.slice(0, 15).map(e => (
+                {battingEvents.slice(0, 15).map((e: any) => (
                   <div
                     key={e.id}
                     className="flex justify-between items-center bg-slate-50 px-3.5 py-2.5 rounded-lg border border-slate-200 text-xs"

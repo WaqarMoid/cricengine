@@ -16,19 +16,19 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ id:
       where: { bowlerId: id, isUndone: false },
     })
 
-    const totalRuns = battingEvents.reduce((sum, e) => sum + e.runsOffBat, 0)
-    const ballsFaced = battingEvents.filter(e => e.extraType !== 'WIDE').length
-    const fours = battingEvents.filter(e => e.runsOffBat === 4).length
-    const sixes = battingEvents.filter(e => e.runsOffBat === 6).length
+    const totalRuns = battingEvents.reduce((sum: number, e: any) => sum + e.runsOffBat, 0)
+    const ballsFaced = battingEvents.filter((e: any) => e.extraType !== 'WIDE').length
+    const fours = battingEvents.filter((e: any) => e.runsOffBat === 4).length
+    const sixes = battingEvents.filter((e: any) => e.runsOffBat === 6).length
     const strikeRate = ballsFaced > 0 ? (totalRuns / ballsFaced) * 100 : 0
 
     const wicketsTaken = bowlingEvents.filter(
-      e => e.isWicket && e.wicketType !== 'RUN_OUT' && e.wicketType !== 'RETIRED'
+      (e: any) => e.isWicket && e.wicketType !== 'RUN_OUT' && e.wicketType !== 'RETIRED'
     ).length
     const legalBowlingBalls = bowlingEvents.filter(
-      e => e.extraType !== 'WIDE' && e.extraType !== 'NO_BALL'
+      (e: any) => e.extraType !== 'WIDE' && e.extraType !== 'NO_BALL'
     ).length
-    const runsConceded = bowlingEvents.reduce((sum, e) => {
+    const runsConceded = bowlingEvents.reduce((sum: number, e: any) => {
       if (e.extraType === 'WIDE') return sum + 1 + e.extras
       if (e.extraType === 'NO_BALL') return sum + 1 + e.runsOffBat
       if (e.extraType === 'BYE' || e.extraType === 'LEG_BYE') return sum
@@ -38,8 +38,8 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ id:
 
     // Wagon wheel data (all shots with coordinates)
     const shots = battingEvents
-      .filter(e => e.shotX !== null && e.shotY !== null)
-      .map(e => ({ x: e.shotX!, y: e.shotY!, runs: e.runsOffBat, zone: e.shotZone }))
+      .filter((e: any) => e.shotX !== null && e.shotY !== null)
+      .map((e: any) => ({ x: e.shotX!, y: e.shotY!, runs: e.runsOffBat, zone: e.shotZone }))
 
     return NextResponse.json({
       ...player,

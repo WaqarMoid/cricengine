@@ -43,10 +43,10 @@ export default async function MatchScorecardPage({ params }: PageProps) {
   const players = await prisma.player.findMany({
     where: { id: { in: playerIds } },
   })
-  const playerMap = Object.fromEntries(players.map(p => [p.id, p]))
+  const playerMap = Object.fromEntries(players.map((p: any) => [p.id, p]))
 
   // Map events to domain BallEvent
-  const events: BallEvent[] = match.ballEvents.map(e => ({
+  const events: BallEvent[] = match.ballEvents.map((e: any) => ({
     id: e.id,
     matchId: e.matchId,
     inningsNo: e.inningsNo,

@@ -21,10 +21,10 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ id:
       where: { id: { in: playerIds } },
       select: { id: true, name: true, battingStyle: true, bowlingStyle: true },
     })
-    const playerMap = Object.fromEntries(players.map(p => [p.id, p]))
+    const playerMap = Object.fromEntries(players.map((p: any) => [p.id, p]))
 
     // Convert Prisma events to engine BallEvent type
-    const events: BallEvent[] = match.ballEvents.map(e => ({
+    const events: BallEvent[] = match.ballEvents.map((e: any) => ({
       id: e.id,
       matchId: e.matchId,
       inningsNo: e.inningsNo,
