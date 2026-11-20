@@ -64,6 +64,7 @@ model League {
 model Player {
   id           String        @id @default(uuid())
   name         String
+  source       String        @default("live")
   battingStyle BattingStyle? @map("batting_style")
   bowlingStyle BowlingStyle? @default(NONE) @map("bowling_style")
   avatarUrl    String?       @map("avatar_url")
@@ -94,11 +95,72 @@ model Match {
   // Store team player IDs as JSON arrays
   teamAPlayerIds String[]     @map("team_a_player_ids")
   teamBPlayerIds String[]     @map("team_b_player_ids")
-  
+
+  // Tournament context (null for one-off matches)
+  tournamentId   String?      @map("tournament_id")
+  tournament     Tournament?  @relation(fields: [tournamentId], references: [id])
+  stage          String?      // GROUP | SEMI_FINAL | FINAL | ONE_OFF
+  groupName      String?      @map("group_name")
+  matchNumber    Int?         @map("match_number")
+  matchLabel     String?      @map("match_label")
+  teamAId        String?      @map("team_a_id") // tournament_teams.id
+  teamBId        String?      @map("team_b_id")
+  scheduledAt    DateTime?    @map("scheduled_at")
+  venue          String?
+  source         String       @default("live") // live | seed
+
   ballEvents     BallEvent[]
   createdAt      DateTime     @default(now()) @map("created_at")
 
+  @@index([tournamentId], map: "idx_matches_tournament")
   @@map("matches")
+}
+
+model Tournament {
+  id                String           @id @default(uuid())
+  name              String
+  shortName         String?          @map("short_name")
+  season            String?
+  venue             String?
+  description       String?
+  format            String           @default("GROUPS_KNOCKOUT")
+  oversPerMatch     Int              @default(10) @map("overs_per_match")
+  maxPlayersPerTeam Int              @default(11) @map("max_players_per_team")
+  maxOversPerBowler Int?             @map("max_overs_per_bowler")
+  qualifyPerGroup   Int              @default(2) @map("qualify_per_group")
+  startDate         DateTime?        @map("start_date")
+  endDate           DateTime?        @map("end_date")
+  source            String           @default("live")
+  createdAt         DateTime         @default(now()) @map("created_at")
+
+  teams             TournamentTeam[]
+  matches           Match[]
+
+  @@map("tournaments")
+}
+
+model TournamentTeam {
+  id           String     @id @default(uuid())
+  tournamentId String     @map("tournament_id")
+  tournament   Tournament @relation(fields: [tournamentId], references: [id])
+  name         String
+  shortName    String?    @map("short_name")
+  groupName    String?    @map("group_name")
+  captainId    String?    @map("captain_id")
+  keeperId     String?    @map("keeper_id")
+  color        String?
+  playerIds    String[]   @map("player_ids")
+  source       String     @default("live")
+  createdAt    DateTime   @default(now()) @map("created_at")
+
+  @@map("tournament_teams")
+}
+
+model AppMeta {
+  key   String @id
+  value String
+
+  @@map("app_meta")
 }
 
 model BallEvent {

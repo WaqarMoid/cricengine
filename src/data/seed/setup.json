@@ -1,0 +1,832 @@
+{
+  "version": 1,
+  "players": [
+    {
+      "key": "P01",
+      "name": "Md Waqar Moid",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P02",
+      "name": "Challa Umesh Varun",
+      "bat": "LEFT_HAND",
+      "bowl": "LEFT_ARM_FAST"
+    },
+    {
+      "key": "P03",
+      "name": "V Mouliprasanna",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P04",
+      "name": "Subhankar Sutradhar",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P05",
+      "name": "Kamatam Akshay Reddy",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P06",
+      "name": "M Adnan Khan",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P07",
+      "name": "Pranav Krishna",
+      "bat": "RIGHT_HAND",
+      "bowl": "NONE"
+    },
+    {
+      "key": "P08",
+      "name": "Ayush Jha",
+      "bat": "LEFT_HAND",
+      "bowl": "NONE"
+    },
+    {
+      "key": "P09",
+      "name": "Om Gupta",
+      "bat": "RIGHT_HAND",
+      "bowl": "LEFT_ARM_SPIN"
+    },
+    {
+      "key": "P10",
+      "name": "Akshat Sharma",
+      "bat": "LEFT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P11",
+      "name": "Yash Upadhyay",
+      "bat": "RIGHT_HAND",
+      "bowl": "LEFT_ARM_SPIN"
+    },
+    {
+      "key": "P12",
+      "name": "Krish Vijay Tiwari",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P13",
+      "name": "Bipin Kumar Jaiswal",
+      "bat": "LEFT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P14",
+      "name": "Abhimanyu Solanki",
+      "bat": "LEFT_HAND",
+      "bowl": "NONE"
+    },
+    {
+      "key": "P15",
+      "name": "Karan Pratap Lohiya",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P16",
+      "name": "Ashish Kumar Soni",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P17",
+      "name": "Shivam Kumar Shaw",
+      "bat": "RIGHT_HAND",
+      "bowl": "NONE"
+    },
+    {
+      "key": "P18",
+      "name": "Saksham Verma",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P19",
+      "name": "Jain Shlok Nilesh",
+      "bat": "RIGHT_HAND",
+      "bowl": "LEFT_ARM_FAST"
+    },
+    {
+      "key": "P20",
+      "name": "Gundeep Singh",
+      "bat": "LEFT_HAND",
+      "bowl": "NONE"
+    },
+    {
+      "key": "P21",
+      "name": "Vedant Sinha",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P22",
+      "name": "Atharv Phirke",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P23",
+      "name": "Jatoth Shashi Vardan",
+      "bat": "RIGHT_HAND",
+      "bowl": "LEFT_ARM_SPIN"
+    },
+    {
+      "key": "P24",
+      "name": "Kshitij Nema",
+      "bat": "LEFT_HAND",
+      "bowl": "NONE"
+    },
+    {
+      "key": "P25",
+      "name": "Anirvan Tyagi",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P26",
+      "name": "Chaitanya Goel",
+      "bat": "RIGHT_HAND",
+      "bowl": "NONE"
+    },
+    {
+      "key": "P27",
+      "name": "Rahul Mandal",
+      "bat": "LEFT_HAND",
+      "bowl": "LEFT_ARM_SPIN"
+    },
+    {
+      "key": "P28",
+      "name": "Mitin Jangid",
+      "bat": "LEFT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P29",
+      "name": "Vibhu Yadav",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P30",
+      "name": "Chitransh Gangwar",
+      "bat": "RIGHT_HAND",
+      "bowl": "NONE"
+    },
+    {
+      "key": "P31",
+      "name": "Tanush Khagwal",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P32",
+      "name": "Dweep Joshipura",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P33",
+      "name": "Gaurav Kumar",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P34",
+      "name": "Ashwin Barnwal",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P35",
+      "name": "Varun Malviya",
+      "bat": "RIGHT_HAND",
+      "bowl": "NONE"
+    },
+    {
+      "key": "P36",
+      "name": "Archit Kumar Gupta",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P37",
+      "name": "Suyash Kumar",
+      "bat": "RIGHT_HAND",
+      "bowl": "LEFT_ARM_FAST"
+    },
+    {
+      "key": "P38",
+      "name": "Himanshu Sharma",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P39",
+      "name": "Mohit Sharma",
+      "bat": "RIGHT_HAND",
+      "bowl": "LEFT_ARM_FAST"
+    },
+    {
+      "key": "P40",
+      "name": "T Sukumar",
+      "bat": "RIGHT_HAND",
+      "bowl": "LEFT_ARM_SPIN"
+    },
+    {
+      "key": "P41",
+      "name": "Mahir Jain",
+      "bat": "RIGHT_HAND",
+      "bowl": "NONE"
+    },
+    {
+      "key": "P42",
+      "name": "Vasam Vinay Kumar",
+      "bat": "LEFT_HAND",
+      "bowl": "NONE"
+    },
+    {
+      "key": "P43",
+      "name": "Arul Gupta",
+      "bat": "RIGHT_HAND",
+      "bowl": "LEFT_ARM_SPIN"
+    },
+    {
+      "key": "P44",
+      "name": "Satwik Raj Wadhwa",
+      "bat": "RIGHT_HAND",
+      "bowl": "LEFT_ARM_SPIN"
+    },
+    {
+      "key": "P45",
+      "name": "Tushar Dua",
+      "bat": "LEFT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P46",
+      "name": "Vidit Agarwal",
+      "bat": "RIGHT_HAND",
+      "bowl": "NONE"
+    },
+    {
+      "key": "P47",
+      "name": "Deep Mondal",
+      "bat": "LEFT_HAND",
+      "bowl": "LEFT_ARM_SPIN"
+    },
+    {
+      "key": "P48",
+      "name": "Rudransh Verma",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P49",
+      "name": "Monesh Patidar",
+      "bat": "RIGHT_HAND",
+      "bowl": "NONE"
+    },
+    {
+      "key": "P50",
+      "name": "Sachin Jain",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P51",
+      "name": "Vatsal Mittal",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P52",
+      "name": "Vishnuprasad R",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P53",
+      "name": "Preet Mehta",
+      "bat": "RIGHT_HAND",
+      "bowl": "LEFT_ARM_SPIN"
+    },
+    {
+      "key": "P54",
+      "name": "Daksh Niranjan Shettar",
+      "bat": "RIGHT_HAND",
+      "bowl": "NONE"
+    },
+    {
+      "key": "P55",
+      "name": "Shivam Yadav",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P56",
+      "name": "Aditya Nitin Patil",
+      "bat": "RIGHT_HAND",
+      "bowl": "NONE"
+    },
+    {
+      "key": "P57",
+      "name": "Krishna Mehta",
+      "bat": "LEFT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P58",
+      "name": "Cezan Vispi Damania",
+      "bat": "RIGHT_HAND",
+      "bowl": "LEFT_ARM_FAST"
+    },
+    {
+      "key": "P59",
+      "name": "Harshvardhan Agarwal",
+      "bat": "LEFT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P60",
+      "name": "Aurav Pratap Singh",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P61",
+      "name": "Sunny Kumar",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P62",
+      "name": "Tejas Shrivastava",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P63",
+      "name": "Yuvraj Kumar",
+      "bat": "RIGHT_HAND",
+      "bowl": "LEFT_ARM_SPIN"
+    },
+    {
+      "key": "P64",
+      "name": "Saurav Raj",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P65",
+      "name": "Prateek Raj",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P66",
+      "name": "Shantanu Prakash",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P67",
+      "name": "Eslavath Shiva",
+      "bat": "RIGHT_HAND",
+      "bowl": "LEFT_ARM_FAST"
+    },
+    {
+      "key": "P68",
+      "name": "Chinmay Singh",
+      "bat": "LEFT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P69",
+      "name": "Kavuri Goutham Chandra",
+      "bat": "RIGHT_HAND",
+      "bowl": "LEFT_ARM_SPIN"
+    },
+    {
+      "key": "P70",
+      "name": "Samanyu Arora",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_SPIN"
+    },
+    {
+      "key": "P71",
+      "name": "Vishal Kumar",
+      "bat": "RIGHT_HAND",
+      "bowl": "RIGHT_ARM_FAST"
+    },
+    {
+      "key": "P72",
+      "name": "Advaith G S",
+      "bat": "RIGHT_HAND",
+      "bowl": "LEFT_ARM_SPIN"
+    }
+  ],
+  "tournaments": [
+    {
+      "key": "H12PL",
+      "name": "Hall 12 Phatta League",
+      "shortName": "H12PL",
+      "season": "2026",
+      "venue": "Hall 12 Ground, IIT Kanpur",
+      "description": "Inter-wing tennis-ball league of Hall 12. 8 teams of 7 in two groups of four; top two of each group cross over into the semi-finals (A1 v B2, B1 v A2).",
+      "oversPerMatch": 10,
+      "maxPlayersPerTeam": 7,
+      "maxOversPerBowler": 2,
+      "qualifyPerGroup": 2,
+      "startDate": "2026-10-24",
+      "endDate": "2026-11-01",
+      "teams": [
+        {
+          "key": "PPK",
+          "name": "Phatta Patakhe",
+          "shortName": "PPK",
+          "group": "A",
+          "captain": "P01",
+          "keeper": "P07",
+          "color": "#DC2626",
+          "players": [
+            "P01",
+            "P02",
+            "P03",
+            "P04",
+            "P05",
+            "P06",
+            "P07"
+          ]
+        },
+        {
+          "key": "MMX",
+          "name": "Midnight Maggi XI",
+          "shortName": "MMX",
+          "group": "A",
+          "captain": "P08",
+          "keeper": "P08",
+          "color": "#D97706",
+          "players": [
+            "P08",
+            "P09",
+            "P10",
+            "P11",
+            "P12",
+            "P13",
+            "P14"
+          ]
+        },
+        {
+          "key": "WCW",
+          "name": "Wing C Wolves",
+          "shortName": "WCW",
+          "group": "A",
+          "captain": "P15",
+          "keeper": "P17",
+          "color": "#2563EB",
+          "players": [
+            "P15",
+            "P16",
+            "P17",
+            "P18",
+            "P19",
+            "P20",
+            "P21"
+          ]
+        },
+        {
+          "key": "CTG",
+          "name": "Canteen Tigers",
+          "shortName": "CTG",
+          "group": "A",
+          "captain": "P22",
+          "keeper": "P24",
+          "color": "#059669",
+          "players": [
+            "P22",
+            "P23",
+            "P24",
+            "P25",
+            "P26",
+            "P27",
+            "P28"
+          ]
+        },
+        {
+          "key": "TTN",
+          "name": "Tapri Titans",
+          "shortName": "TTN",
+          "group": "B",
+          "captain": "P29",
+          "keeper": "P30",
+          "color": "#7C3AED",
+          "players": [
+            "P29",
+            "P30",
+            "P31",
+            "P32",
+            "P33",
+            "P34",
+            "P35"
+          ]
+        },
+        {
+          "key": "MKS",
+          "name": "Mess Ke Sher",
+          "shortName": "MKS",
+          "group": "B",
+          "captain": "P36",
+          "keeper": "P41",
+          "color": "#DB2777",
+          "players": [
+            "P36",
+            "P37",
+            "P38",
+            "P39",
+            "P40",
+            "P41",
+            "P42"
+          ]
+        },
+        {
+          "key": "LKX",
+          "name": "Lift Kharab XI",
+          "shortName": "LKX",
+          "group": "B",
+          "captain": "P43",
+          "keeper": "P46",
+          "color": "#0891B2",
+          "players": [
+            "P43",
+            "P44",
+            "P45",
+            "P46",
+            "P47",
+            "P48",
+            "P49"
+          ]
+        },
+        {
+          "key": "RTR",
+          "name": "Rooftop Raiders",
+          "shortName": "RTR",
+          "group": "B",
+          "captain": "P50",
+          "keeper": "P54",
+          "color": "#4B5563",
+          "players": [
+            "P50",
+            "P51",
+            "P52",
+            "P53",
+            "P54",
+            "P55",
+            "P56"
+          ]
+        }
+      ],
+      "fixtures": [
+        {
+          "key": "H12-M01",
+          "stage": "GROUP",
+          "group": "A",
+          "matchNo": 1,
+          "label": "Match 1",
+          "date": "2026-10-24T16:00:00+05:30",
+          "teamA": "PPK",
+          "teamB": "MMX"
+        },
+        {
+          "key": "H12-M02",
+          "stage": "GROUP",
+          "group": "B",
+          "matchNo": 2,
+          "label": "Match 2",
+          "date": "2026-10-24T17:15:00+05:30",
+          "teamA": "TTN",
+          "teamB": "MKS"
+        },
+        {
+          "key": "H12-M03",
+          "stage": "GROUP",
+          "group": "A",
+          "matchNo": 3,
+          "label": "Match 3",
+          "date": "2026-10-25T16:00:00+05:30",
+          "teamA": "WCW",
+          "teamB": "CTG"
+        },
+        {
+          "key": "H12-M04",
+          "stage": "GROUP",
+          "group": "B",
+          "matchNo": 4,
+          "label": "Match 4",
+          "date": "2026-10-25T17:15:00+05:30",
+          "teamA": "LKX",
+          "teamB": "RTR"
+        },
+        {
+          "key": "H12-M05",
+          "stage": "GROUP",
+          "group": "A",
+          "matchNo": 5,
+          "label": "Match 5",
+          "date": "2026-10-26T16:00:00+05:30",
+          "teamA": "PPK",
+          "teamB": "WCW"
+        },
+        {
+          "key": "H12-M06",
+          "stage": "GROUP",
+          "group": "B",
+          "matchNo": 6,
+          "label": "Match 6",
+          "date": "2026-10-26T17:15:00+05:30",
+          "teamA": "TTN",
+          "teamB": "LKX"
+        },
+        {
+          "key": "H12-M07",
+          "stage": "GROUP",
+          "group": "A",
+          "matchNo": 7,
+          "label": "Match 7",
+          "date": "2026-10-27T16:00:00+05:30",
+          "teamA": "MMX",
+          "teamB": "CTG"
+        },
+        {
+          "key": "H12-M08",
+          "stage": "GROUP",
+          "group": "B",
+          "matchNo": 8,
+          "label": "Match 8",
+          "date": "2026-10-27T17:15:00+05:30",
+          "teamA": "MKS",
+          "teamB": "RTR"
+        },
+        {
+          "key": "H12-M09",
+          "stage": "GROUP",
+          "group": "A",
+          "matchNo": 9,
+          "label": "Match 9",
+          "date": "2026-10-28T16:00:00+05:30",
+          "teamA": "PPK",
+          "teamB": "CTG"
+        },
+        {
+          "key": "H12-M10",
+          "stage": "GROUP",
+          "group": "B",
+          "matchNo": 10,
+          "label": "Match 10",
+          "date": "2026-10-28T17:15:00+05:30",
+          "teamA": "TTN",
+          "teamB": "RTR"
+        },
+        {
+          "key": "H12-M11",
+          "stage": "GROUP",
+          "group": "A",
+          "matchNo": 11,
+          "label": "Match 11",
+          "date": "2026-10-29T16:00:00+05:30",
+          "teamA": "MMX",
+          "teamB": "WCW"
+        },
+        {
+          "key": "H12-M12",
+          "stage": "GROUP",
+          "group": "B",
+          "matchNo": 12,
+          "label": "Match 12",
+          "date": "2026-10-29T17:15:00+05:30",
+          "teamA": "MKS",
+          "teamB": "LKX"
+        },
+        {
+          "key": "H12-SF1",
+          "stage": "SEMI_FINAL",
+          "matchNo": 13,
+          "label": "Semi-final 1",
+          "date": "2026-10-31T16:00:00+05:30",
+          "teamA": "A1",
+          "teamB": "B2"
+        },
+        {
+          "key": "H12-SF2",
+          "stage": "SEMI_FINAL",
+          "matchNo": 14,
+          "label": "Semi-final 2",
+          "date": "2026-10-31T17:15:00+05:30",
+          "teamA": "B1",
+          "teamB": "A2"
+        },
+        {
+          "key": "H12-FINAL",
+          "stage": "FINAL",
+          "matchNo": 15,
+          "label": "Final",
+          "date": "2026-11-01T16:30:00+05:30",
+          "teamA": "W:H12-SF1",
+          "teamB": "W:H12-SF2"
+        }
+      ]
+    }
+  ],
+  "oneOffs": [
+    {
+      "key": "OO-01",
+      "label": "Wing C Box Cricket",
+      "date": "2026-09-13T18:30:00+05:30",
+      "venue": "Hall 12 Courtyard",
+      "oversLimit": 6,
+      "maxOversPerBowler": 2,
+      "teamA": {
+        "name": "Wing C",
+        "players": [
+          "P01",
+          "P57",
+          "P58",
+          "P59",
+          "P60"
+        ]
+      },
+      "teamB": {
+        "name": "Wing D",
+        "players": [
+          "P61",
+          "P62",
+          "P63",
+          "P64",
+          "P65"
+        ]
+      }
+    },
+    {
+      "key": "OO-02",
+      "label": "Sunday Morning Gully",
+      "date": "2026-10-04T07:30:00+05:30",
+      "venue": "Hall 12 Lawn",
+      "oversLimit": 4,
+      "maxOversPerBowler": 2,
+      "teamA": {
+        "name": "Early Risers",
+        "players": [
+          "P66",
+          "P67",
+          "P08",
+          "P15"
+        ]
+      },
+      "teamB": {
+        "name": "Night Owls",
+        "players": [
+          "P68",
+          "P69",
+          "P22",
+          "P29"
+        ]
+      }
+    },
+    {
+      "key": "OO-03",
+      "label": "Post-Diwali Friendly",
+      "date": "2026-11-14T16:45:00+05:30",
+      "venue": "Hall 12 Ground, IIT Kanpur",
+      "oversLimit": 5,
+      "maxOversPerBowler": 2,
+      "teamA": {
+        "name": "Second Floor",
+        "players": [
+          "P02",
+          "P36",
+          "P43",
+          "P50",
+          "P70"
+        ]
+      },
+      "teamB": {
+        "name": "Third Floor",
+        "players": [
+          "P71",
+          "P72",
+          "P10",
+          "P24",
+          "P47"
+        ]
+      }
+    }
+  ]
+}

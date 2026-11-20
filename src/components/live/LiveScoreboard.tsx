@@ -38,7 +38,7 @@ export function LiveScoreboard({
     <div className="rounded-2xl bg-gradient-to-r from-[#001838] via-[#00224D] to-[#047857] text-white p-6 sm:p-7 shadow-lg border border-slate-800 space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></div>
+          {!result && <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></div>}
           <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-wide">{teamName}</h2>
           {matchStatus && (
             <span className="text-[10px] font-medium tracking-wider px-2.5 py-0.5 rounded-md bg-white/10 text-slate-200 border border-white/15 uppercase">
@@ -88,7 +88,7 @@ export function LiveScoreboard({
           </div>
         )}
 
-        {target !== null && target > score && (
+        {!result && target !== null && target > score && (
           <div className="flex items-center gap-1.5 sm:ml-auto text-slate-300 font-light">
             Need <span className="text-white font-mono font-bold px-1.5 py-0.5 bg-white/15 rounded text-xs">{target - score}</span> runs to win
           </div>

@@ -11,10 +11,22 @@ export default function DashboardPage() {
   const [pinInput, setPinInput] = useState('')
   const [pinError, setPinError] = useState('')
   const [pinLoading, setPinLoading] = useState(false)
+  const [tournaments, setTournaments] = useState<any[]>([])
 
   useEffect(() => {
     fetchMatches()
+    fetch('/api/tournaments')
+      .then(r => r.json())
+      .then(d => { if (Array.isArray(d)) setTournaments(d) })
+      .catch(() => {})
   }, [])
+
+  const sideScore = (m: any, side: 'A' | 'B') => {
+    const inn = m.summary?.innings?.find((i: any) => i.side === side)
+    return inn ? `${inn.runs}/${inn.wickets} (${inn.overs})` : ''
+  }
+  const contextLabel = (m: any) =>
+    m.tournament ? `${m.tournament.shortName || m.tournament.name} · ${m.matchLabel || ''}` : m.matchLabel || 'One-off'
 
   async function fetchMatches() {
     try {
@@ -159,7 +171,7 @@ export default function DashboardPage() {
               <div className="flex items-center gap-2">
                 <span className="font-mono text-white">{featuredMatch.oversLimit} Overs Match</span>
                 <span>•</span>
-                <span>Match #{featuredMatch.id.slice(0, 6)}</span>
+                <span className="truncate">{featuredMatch.tournament ? contextLabel(featuredMatch) : `Match #${featuredMatch.id.slice(0, 6)}`}</span>
               </div>
               {featuredMatch.status === 'IN_PROGRESS' ? (
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-600 text-white text-[10px] font-medium uppercase animate-pulse">
@@ -176,12 +188,12 @@ export default function DashboardPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-4 py-2 text-center md:text-left">
               <div>
                 <h3 className="text-xl font-medium text-white">{featuredMatch.teamAName}</h3>
-                <p className="text-xs text-slate-400 font-light">Innings {featuredMatch.currentInnings}</p>
+                <p className="text-xs text-slate-300 font-mono">{sideScore(featuredMatch, 'A') || `Innings ${featuredMatch.currentInnings}`}</p>
               </div>
 
               <div className="text-center space-y-1">
                 <div className="text-xs font-mono text-amber-400">
-                  {featuredMatch.status === 'IN_PROGRESS' ? 'IN PROGRESS' : 'SCHEDULED'}
+                  {featuredMatch.summary?.result?.text || (featuredMatch.status === 'IN_PROGRESS' ? 'IN PROGRESS' : featuredMatch.status.replace('_', ' '))}
                 </div>
                 <div className="text-sm text-slate-300 font-light">
                   {featuredMatch.tossWinner ? (
@@ -194,7 +206,7 @@ export default function DashboardPage() {
 
               <div className="text-center md:text-right">
                 <h3 className="text-xl font-medium text-white">{featuredMatch.teamBName}</h3>
-                <p className="text-xs text-slate-400 font-light">Opponent</p>
+                <p className="text-xs text-slate-300 font-mono">{sideScore(featuredMatch, 'B') || 'Opponent'}</p>
               </div>
             </div>
 
@@ -221,6 +233,33 @@ export default function DashboardPage() {
                   Live Feed ➔
                 </Link>
               </div>
+            </div>
+          </section>
+        )}
+
+        {/* Tournaments */}
+        {tournaments.length > 0 && (
+          <section className="space-y-3">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-2">
+              <h2 className="text-sm font-semibold text-[#001838] uppercase tracking-wide">Tournaments</h2>
+              <Link href="/tournaments" className="text-xs text-[#0066CC] hover:underline font-medium">View all</Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {tournaments.slice(0, 2).map((t) => (
+                <Link key={t.id} href={`/tournaments/${t.id}`} className="bg-white rounded-xl border border-slate-200 p-4 flex items-center gap-3 hover:border-[#0066CC]/50 transition-colors shadow-2xs">
+                  <div className="w-10 h-10 rounded-lg bg-[#001838] text-amber-300 flex items-center justify-center shrink-0">
+                    <Trophy className="w-5 h-5" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-sm font-semibold text-[#001838] truncate">{t.name}</div>
+                    <div className="text-[11px] text-slate-500 truncate">
+                      {t.teamCount} teams · {t.played}/{t.matchCount} played · {t.oversPerMatch} overs
+                    </div>
+                    {t.champion && <div className="text-[11px] text-amber-700 font-medium truncate">🏆 {t.champion} — {t.finalResult}</div>}
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-slate-400 shrink-0" />
+                </Link>
+              ))}
             </div>
           </section>
         )}
@@ -262,8 +301,8 @@ export default function DashboardPage() {
                   className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs hover:border-[#0066CC]/50 transition-colors flex flex-col justify-between"
                 >
                   <div className="bg-slate-50 px-4 py-2 flex items-center justify-between text-xs border-b border-slate-200">
-                    <span className="font-mono text-slate-600 font-light">
-                      {match.oversLimit} overs
+                    <span className="font-mono text-slate-600 font-light truncate pr-2">
+                      {match.oversLimit} ov · {contextLabel(match)}
                     </span>
                     {match.status === 'IN_PROGRESS' ? (
                       <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.2 rounded-full bg-red-600 text-white">
@@ -277,17 +316,25 @@ export default function DashboardPage() {
                   </div>
 
                   <div className="p-4 space-y-2">
-                    <div className="flex items-center justify-between text-sm font-medium text-slate-900">
-                      <span>{match.teamAName}</span>
-                      <span className="text-xs font-mono text-slate-400 font-normal">Inn {match.currentInnings}</span>
-                    </div>
-                    <div className="text-sm font-medium text-slate-900">
-                      {match.teamBName}
-                    </div>
+                    {(['A', 'B'] as const).map(side => {
+                      const won = match.summary?.result?.winner === side
+                      return (
+                        <div key={side} className="flex items-center justify-between gap-2 text-sm">
+                          <span className={`truncate ${won ? 'font-semibold text-[#001838]' : 'font-medium text-slate-900'}`}>
+                            {side === 'A' ? match.teamAName : match.teamBName}
+                          </span>
+                          <span className="text-xs font-mono text-slate-600 shrink-0">{sideScore(match, side)}</span>
+                        </div>
+                      )
+                    })}
 
-                    <div className="pt-2 border-t border-slate-100 text-[11px] text-slate-500 font-light flex justify-between">
-                      <span>{match._count?.ballEvents || 0} balls bowled</span>
-                      {match.tossWinner && <span>Toss: {match.tossWinner}</span>}
+                    <div className="pt-2 border-t border-slate-100 text-[11px] font-light flex justify-between gap-2">
+                      {match.summary?.result ? (
+                        <span className="text-emerald-700 font-medium truncate">{match.summary.result.text}</span>
+                      ) : (
+                        <span className="text-slate-500">{match._count?.ballEvents || 0} balls bowled</span>
+                      )}
+                      {match.tossWinner && !match.summary?.result && <span className="text-slate-500 truncate">Toss: {match.tossWinner}</span>}
                     </div>
                   </div>
 

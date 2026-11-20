@@ -25,6 +25,40 @@ export default function NewMatchPage() {
   const [error, setError] = useState('')
 
   const [createdMatch, setCreatedMatch] = useState<{ id: string; scorerPin: string } | null>(null)
+
+  // Optional tournament fixture context
+  const [tournaments, setTournaments] = useState<Array<{ id: string; name: string }>>([])
+  const [tournamentId, setTournamentId] = useState('')
+  const [tDetail, setTDetail] = useState<any | null>(null)
+  const [stage, setStage] = useState<'GROUP' | 'SEMI_FINAL' | 'FINAL'>('GROUP')
+  const [teamAId, setTeamAId] = useState('')
+  const [teamBId, setTeamBId] = useState('')
+
+  useEffect(() => {
+    fetch('/api/tournaments')
+      .then(res => res.json())
+      .then(data => { if (Array.isArray(data)) setTournaments(data) })
+      .catch(() => {})
+  }, [])
+
+  useEffect(() => {
+    setTeamAId(''); setTeamBId(''); setTDetail(null)
+    if (!tournamentId) return
+    fetch(`/api/tournaments/${tournamentId}`)
+      .then(res => res.json())
+      .then(data => {
+        setTDetail(data)
+        if (data?.tournament?.oversPerMatch) setOversLimit(data.tournament.oversPerMatch)
+      })
+      .catch(() => {})
+  }, [tournamentId])
+
+  const pickTournamentTeam = (side: 'A' | 'B', id: string) => {
+    const team = tDetail?.teams?.find((t: any) => t.id === id)
+    const names: string[] = team ? team.playerIds.map((pid: string) => tDetail.players[pid]?.name).filter(Boolean) : []
+    if (side === 'A') { setTeamAId(id); setTeamAName(team?.name || ''); setTeamAPlayers(names) }
+    else { setTeamBId(id); setTeamBName(team?.name || ''); setTeamBPlayers(names) }
+  }
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
@@ -71,6 +105,11 @@ export default function NewMatchPage() {
 
     if (!teamAName.trim() || !teamBName.trim()) {
       setError('Please provide names for both teams.')
+      return
+    }
+
+    if (tournamentId && (!teamAId || !teamBId || teamAId === teamBId)) {
+      setError('Pick two different tournament teams.')
       return
     }
 
@@ -128,6 +167,7 @@ export default function NewMatchPage() {
           tossDecision,
           teamAPlayerIds,
           teamBPlayerIds,
+          ...(tournamentId && teamAId && teamBId ? { tournamentId, stage, teamAId, teamBId } : {}),
         }),
       })
 
@@ -239,6 +279,58 @@ export default function NewMatchPage() {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Tournament fixture (optional) */}
+              {tournaments.length > 0 && (
+                <div className="space-y-2 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                  <label className="text-xs font-medium uppercase tracking-wider text-[#001838] flex items-center gap-1.5">
+                    <Trophy className="w-3.5 h-3.5" /> Tournament fixture <span className="normal-case font-light text-slate-400">(optional)</span>
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <select
+                      value={tournamentId}
+                      onChange={e => setTournamentId(e.target.value)}
+                      className="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs font-medium text-[#001838] focus:border-[#0066CC] focus:outline-none"
+                    >
+                      <option value="">One-off match (no tournament)</option>
+                      {tournaments.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}
+                    </select>
+                    {tournamentId && (
+                      <select
+                        value={stage}
+                        onChange={e => setStage(e.target.value as any)}
+                        className="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs font-medium text-[#001838] focus:border-[#0066CC] focus:outline-none"
+                      >
+                        <option value="GROUP">Group / league match</option>
+                        <option value="SEMI_FINAL">Semi-final</option>
+                        <option value="FINAL">Final</option>
+                      </select>
+                    )}
+                  </div>
+                  {tournamentId && tDetail?.teams && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {(['A', 'B'] as const).map(side => (
+                        <select
+                          key={side}
+                          value={side === 'A' ? teamAId : teamBId}
+                          onChange={e => pickTournamentTeam(side, e.target.value)}
+                          className="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs font-medium text-[#001838] focus:border-[#0066CC] focus:outline-none"
+                        >
+                          <option value="">Team {side}…</option>
+                          {tDetail.teams.map((t: any) => (
+                            <option key={t.id} value={t.id} disabled={(side === 'A' ? teamBId : teamAId) === t.id}>
+                              {t.name}{t.groupName ? ` (Group ${t.groupName})` : ''}
+                            </option>
+                          ))}
+                        </select>
+                      ))}
+                    </div>
+                  )}
+                  {tournamentId && (
+                    <p className="text-[11px] text-slate-500 font-light">Lineups are filled from the registered squads; remove anyone not playing. The result feeds the points table automatically.</p>
+                  )}
+                </div>
+              )}
+
               {/* Team Names */}
               <div className="space-y-2">
                 <label className="text-xs font-medium uppercase tracking-wider text-[#001838] block">

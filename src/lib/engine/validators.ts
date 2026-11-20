@@ -47,6 +47,53 @@ export const createMatchSchema = z.object({
   tossWinner: z.string().optional(),
   tossDecision: z.enum(['BAT', 'BOWL']).optional(),
   leagueId: z.string().uuid().optional(),
+  // Tournament context (optional)
+  tournamentId: z.string().uuid().optional(),
+  stage: z.enum(['GROUP', 'LEAGUE', 'SEMI_FINAL', 'FINAL', 'ONE_OFF']).optional(),
+  groupName: z.string().max(20).optional(),
+  matchNumber: z.number().int().min(1).max(500).optional(),
+  matchLabel: z.string().max(60).optional(),
+  teamAId: z.string().uuid().optional(),
+  teamBId: z.string().uuid().optional(),
+  venue: z.string().max(120).optional(),
+  scheduledAt: z.string().datetime({ offset: true }).optional(),
+})
+
+export const createTournamentSchema = z.object({
+  name: z.string().min(2).max(120),
+  shortName: z.string().max(12).optional(),
+  season: z.string().max(20).optional(),
+  venue: z.string().max(120).optional(),
+  description: z.string().max(500).optional(),
+  oversPerMatch: z.number().int().min(1).max(50),
+  maxPlayersPerTeam: z.number().int().min(2).max(15),
+  maxOversPerBowler: z.number().int().min(1).max(10).optional(),
+  qualifyPerGroup: z.number().int().min(1).max(4).default(2),
+  startDate: z.string().optional(),
+  endDate: z.string().optional(),
+  teams: z.array(z.object({
+    name: z.string().min(1).max(60),
+    shortName: z.string().max(6).optional(),
+    groupName: z.string().max(10).optional(),
+    captainId: z.string().uuid().optional(),
+    playerIds: z.array(z.string().uuid()).min(2).max(15),
+  })).min(2).max(32),
+}).superRefine((d, ctx) => {
+  const seen = new Set<string>()
+  d.teams.forEach((t, i) => {
+    if (t.playerIds.length > d.maxPlayersPerTeam) {
+      ctx.addIssue({ code: 'custom', path: ['teams', i, 'playerIds'], message: `${t.name}: max ${d.maxPlayersPerTeam} players` })
+    }
+    for (const p of t.playerIds) {
+      if (seen.has(p)) ctx.addIssue({ code: 'custom', path: ['teams', i, 'playerIds'], message: `${t.name}: a player is already in another team` })
+      seen.add(p)
+    }
+    if (t.captainId && !t.playerIds.includes(t.captainId)) {
+      ctx.addIssue({ code: 'custom', path: ['teams', i, 'captainId'], message: `${t.name}: captain must be in the squad` })
+    }
+  })
+  const names = new Set(d.teams.map(t => t.name.toLowerCase()))
+  if (names.size !== d.teams.length) ctx.addIssue({ code: 'custom', path: ['teams'], message: 'Team names must be unique' })
 })
 
 export const createPlayerSchema = z.object({

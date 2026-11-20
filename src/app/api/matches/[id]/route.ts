@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/db'
 import { calculateInningsState } from '@/lib/engine/scoring-engine'
 import { BallEvent } from '@/lib/engine/types'
+import { publicSummary, summarizeMatch } from '@/lib/engine/match-summary'
 
 // GET /api/matches/[id] - Full match state computed from events
 export async function GET(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -11,6 +12,7 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ id:
       where: { id },
       include: {
         ballEvents: { orderBy: { sequenceNo: 'asc' } },
+        tournament: { select: { id: true, name: true, shortName: true } },
       },
     })
     if (!match) return NextResponse.json({ error: 'Match not found' }, { status: 404 })
@@ -87,7 +89,14 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ id:
         teamAPlayerIds: match.teamAPlayerIds,
         teamBPlayerIds: match.teamBPlayerIds,
         createdAt: match.createdAt,
+        tournament: (match as any).tournament ?? null,
+        stage: (match as any).stage ?? null,
+        groupName: (match as any).groupName ?? null,
+        matchLabel: (match as any).matchLabel ?? null,
+        venue: (match as any).venue ?? null,
+        scheduledAt: (match as any).scheduledAt ?? null,
       },
+      summary: publicSummary(summarizeMatch(match as any, events)),
       players: playerMap,
       innings1: serializeInnings(innings1State),
       innings2: innings2State ? serializeInnings(innings2State) : null,

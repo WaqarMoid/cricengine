@@ -81,3 +81,7 @@ h1, h2, h3, h4, h5, h6, .font-heading, .font-editorial {
 }
 
 
+
+/* Horizontal chip rows (tabs) without a visible scrollbar on phones */
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

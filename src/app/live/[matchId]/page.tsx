@@ -20,7 +20,7 @@ interface PageProps {
 export default function LiveMatchPage({ params }: PageProps) {
   const { matchId } = use(params)
   const { data, loading, error } = useMatchState(matchId, 2500)
-  const [selectedInnings, setSelectedInnings] = useState<1 | 2>(1)
+  const [pickedInnings, setSelectedInnings] = useState<1 | 2 | null>(null)
 
   if (loading) {
     return (
@@ -52,7 +52,11 @@ export default function LiveMatchPage({ params }: PageProps) {
   }
 
   const { match, players, innings1, innings2, rawEvents } = data
+  const summary: any = (data as any).summary
+  const resultText: string | null = summary?.result?.text ?? null
   const currentInnings = match.currentInnings
+  // Default to the innings in play (the chase once it has started)
+  const selectedInnings: 1 | 2 = pickedInnings ?? (innings2 ? 2 : 1)
   const activeInningsNumber = innings2 && selectedInnings === 2 ? 2 : (currentInnings === 2 && selectedInnings === 2 ? 2 : 1)
   const activeInnings = activeInningsNumber === 2 && innings2 ? innings2 : innings1
 
@@ -139,22 +143,28 @@ export default function LiveMatchPage({ params }: PageProps) {
         {/* Match Header Breadcrumbs & Status Bar (Cricinfo Style) */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
           <div className="space-y-1">
-            <div className="flex items-center gap-2 text-xs text-slate-500 font-light">
+            <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500 font-light">
               <Link href="/" className="hover:text-[#0066CC] flex items-center gap-1">
                 <ArrowLeft className="w-3 h-3" />
                 <span>Match Centre</span>
               </Link>
               <span>/</span>
-              <span className="font-mono text-slate-700">{match.oversLimit} Overs Format</span>
-              <span>/</span>
-              <span>{match.teamAName} vs {match.teamBName}</span>
+              {(match as any).tournament ? (
+                <Link href={`/tournaments/${(match as any).tournament.id}`} className="hover:text-[#0066CC] text-slate-700 truncate">
+                  {(match as any).tournament.name}{(match as any).matchLabel ? ` · ${(match as any).matchLabel}` : ''}
+                </Link>
+              ) : (
+                <span className="font-mono text-slate-700">{match.oversLimit} Overs Format</span>
+              )}
+              <span className="hidden sm:inline">/</span>
+              <span className="hidden sm:inline">{match.teamAName} vs {match.teamBName}</span>
             </div>
             <h1 className="font-editorial text-2xl sm:text-3xl font-light text-[#001838] tracking-wide uppercase">
               {match.teamAName} <span className="font-mono text-slate-400 font-light">vs</span> {match.teamBName}
             </h1>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             {/* Innings Tabs */}
             {innings2 && (
               <div className="flex bg-slate-100 p-1 rounded-xl border border-slate-200">
@@ -202,6 +212,7 @@ export default function LiveMatchPage({ params }: PageProps) {
           rrr={activeInnings.requiredRunRate || null}
           target={activeInnings.target || null}
           matchStatus={match.status}
+          result={resultText}
         />
 
         {/* Over History Ribbon */}
