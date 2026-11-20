@@ -14,6 +14,18 @@ export interface MatchStateResponse {
     teamAPlayerIds: string[]
     teamBPlayerIds: string[]
     createdAt: string
+    tournament?: { id: string; name: string; shortName: string | null } | null
+    stage?: string | null
+    groupName?: string | null
+    matchLabel?: string | null
+    venue?: string | null
+    scheduledAt?: string | null
+  }
+  summary?: {
+    battingFirst: 'A' | 'B'
+    innings: Array<{ side: 'A' | 'B'; teamName: string; runs: number; wickets: number; overs: string }>
+    result: { winner: 'A' | 'B' | null; text: string } | null
+    isComplete: boolean
   }
   players: Record<string, {
     id: string

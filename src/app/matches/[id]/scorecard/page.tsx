@@ -6,7 +6,8 @@ import { BallEvent } from '@/lib/engine/types'
 import { BattingCard } from '@/components/live/BattingCard'
 import { BowlingCard } from '@/components/live/BowlingCard'
 import { WagonWheel } from '@/components/live/WagonWheel'
-import { ArrowLeft, Lock } from 'lucide-react'
+import { ArrowLeft, Lock, Trophy } from 'lucide-react'
+import { summarizeMatch } from '@/lib/engine/match-summary'
 
 export const dynamic = 'force-dynamic'
 
@@ -21,6 +22,7 @@ export default async function MatchScorecardPage({ params }: PageProps) {
     where: { id },
     include: {
       ballEvents: { orderBy: { sequenceNo: 'asc' } },
+      tournament: { select: { id: true, name: true } },
     },
   })
 
@@ -88,6 +90,8 @@ export default async function MatchScorecardPage({ params }: PageProps) {
   const inn1State = calculateInningsState(inn1Events, 1, match.oversLimit, null, inn1BattersCount)
   const target = inn1State.isInningsComplete ? inn1State.totalRuns + 1 : null
   const inn2State = calculateInningsState(inn2Events, 2, match.oversLimit, target, inn2BattersCount)
+  const resultText = summarizeMatch(match as any, events).result?.text ?? null
+  const tournament = (match as any).tournament as { id: string; name: string } | null
 
   const buildBatters = (state: ReturnType<typeof calculateInningsState>, battingIds: string[]) => {
     return battingIds.map(pid => {
@@ -164,7 +168,7 @@ export default async function MatchScorecardPage({ params }: PageProps) {
         {/* Match Header */}
         <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-xs text-slate-500 font-light">
+            <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500 font-light">
               <Link href="/" className="hover:text-[#0066CC] flex items-center gap-1">
                 <ArrowLeft className="w-3 h-3" />
                 <span>Match Centre</span>
@@ -175,14 +179,24 @@ export default async function MatchScorecardPage({ params }: PageProps) {
             <h1 className="font-editorial text-2xl sm:text-3xl font-light text-[#001838] uppercase tracking-wide">
               {match.teamAName} <span className="font-mono text-slate-400 font-light">vs</span> {match.teamBName}
             </h1>
+            {tournament && (
+              <Link href={`/tournaments/${tournament.id}`} className="inline-flex items-center gap-1.5 text-xs text-[#0066CC] font-medium hover:underline">
+                <Trophy className="w-3.5 h-3.5" />
+                {tournament.name}{(match as any).matchLabel ? ` · ${(match as any).matchLabel}` : ''}
+              </Link>
+            )}
             {match.tossWinner && (
               <p className="text-xs text-slate-600 font-light">
                 Toss: <strong className="font-medium text-[#001838]">{match.tossWinner}</strong> elected to {match.tossDecision?.toLowerCase()}
+                {(match as any).venue ? ` · ${(match as any).venue}` : ''}
               </p>
+            )}
+            {resultText && (
+              <p className="inline-block text-xs font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-lg px-3 py-1.5">{resultText}</p>
             )}
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <Link
               href={`/score/${match.id}`}
               className="px-4 py-2 bg-white hover:bg-slate-50 text-xs font-medium uppercase tracking-wider text-[#001838] rounded-xl border border-slate-200 transition-colors shadow-2xs flex items-center gap-1.5"
@@ -202,7 +216,7 @@ export default async function MatchScorecardPage({ params }: PageProps) {
         {/* 1st Innings Section */}
         <section className="space-y-4">
           <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-            <h2 className="font-editorial text-lg sm:text-xl font-normal uppercase tracking-wide text-[#001838]">
+            <h2 className="font-editorial text-base sm:text-xl font-normal uppercase tracking-wide text-[#001838]">
               1st Innings: {team1Name} ({inn1State.totalRuns}/{inn1State.totalWickets} in {inn1State.totalOvers} ov)
             </h2>
             <span className="text-xs font-mono text-slate-500">CRR: {inn1State.currentRunRate.toFixed(2)}</span>
@@ -229,7 +243,7 @@ export default async function MatchScorecardPage({ params }: PageProps) {
         {(inn2Events.length > 0 || match.currentInnings >= 2) && (
           <section className="space-y-4 pt-6">
             <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-              <h2 className="font-editorial text-lg sm:text-xl font-normal uppercase tracking-wide text-[#001838]">
+              <h2 className="font-editorial text-base sm:text-xl font-normal uppercase tracking-wide text-[#001838]">
                 2nd Innings: {team2Name} ({inn2State.totalRuns}/{inn2State.totalWickets} in {inn2State.totalOvers} ov)
               </h2>
               <span className="text-xs font-mono text-slate-500">

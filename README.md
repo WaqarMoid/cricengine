@@ -288,3 +288,11 @@ npm start
 ## 8. License
 
 This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## Tournaments & historical records (Nov 2026)
+
+- **Tournaments / series**: groups, points table with ICC-style NRR, cross-over semi-finals, final, stat leaders and squads — see [docs/TOURNAMENTS.md](docs/TOURNAMENTS.md).
+- **Historical records**: Hall 12 Phatta League 2026 + 3 one-off games load automatically on boot from compact, validated scoresheets — see [docs/SEED_DATA.md](docs/SEED_DATA.md) and the LLM prompt pack in [docs/prompts/gemini-scoresheets.md](docs/prompts/gemini-scoresheets.md).
+- `npm run seed:check` validates the records; `npm test` runs engine, compiler and standings tests.

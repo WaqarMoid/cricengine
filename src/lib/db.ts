@@ -136,11 +136,11 @@ const globalForPrisma = globalThis as unknown as {
 
 function getDatabaseInstance() {
   if (!globalForPrisma.pglite) {
-    const dbDir = path.join(process.cwd(), 'prisma', 'pglite-db')
-    if (!fs.existsSync(dbDir)) {
-      fs.mkdirSync(dbDir, { recursive: true })
-    }
+    // Vercel's deployment folder is read-only; /tmp survives for the life of a warm instance.
+    const dbDir = process.env.PGLITE_DIR
+      || (process.env.VERCEL ? path.join('/tmp', 'cricengine-pglite') : path.join(process.cwd(), 'prisma', 'pglite-db'))
     try {
+      if (!fs.existsSync(dbDir)) fs.mkdirSync(dbDir, { recursive: true })
       globalForPrisma.pglite = new PGlite(dbDir)
     } catch {
       globalForPrisma.pglite = new PGlite()
@@ -148,6 +148,63 @@ function getDatabaseInstance() {
   }
   return globalForPrisma.pglite
 }
+
+/** Tournament support (added Nov 2026). Idempotent so existing databases upgrade in place. */
+const TOURNAMENT_DDL = `
+  CREATE TABLE IF NOT EXISTS "tournaments" (
+    "id" TEXT PRIMARY KEY,
+    "name" TEXT NOT NULL,
+    "short_name" TEXT,
+    "season" TEXT,
+    "venue" TEXT,
+    "description" TEXT,
+    "format" TEXT NOT NULL DEFAULT 'GROUPS_KNOCKOUT',
+    "overs_per_match" INTEGER NOT NULL DEFAULT 10,
+    "max_players_per_team" INTEGER NOT NULL DEFAULT 11,
+    "max_overs_per_bowler" INTEGER,
+    "qualify_per_group" INTEGER NOT NULL DEFAULT 2,
+    "start_date" TIMESTAMP(3),
+    "end_date" TIMESTAMP(3),
+    "source" TEXT NOT NULL DEFAULT 'live',
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP
+  );
+
+  CREATE TABLE IF NOT EXISTS "tournament_teams" (
+    "id" TEXT PRIMARY KEY,
+    "tournament_id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "short_name" TEXT,
+    "group_name" TEXT,
+    "captain_id" TEXT,
+    "keeper_id" TEXT,
+    "color" TEXT,
+    "player_ids" TEXT[] NOT NULL DEFAULT '{}',
+    "source" TEXT NOT NULL DEFAULT 'live',
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP
+  );
+
+  ALTER TABLE "matches"
+    ADD COLUMN IF NOT EXISTS "tournament_id" TEXT,
+    ADD COLUMN IF NOT EXISTS "stage" TEXT,
+    ADD COLUMN IF NOT EXISTS "group_name" TEXT,
+    ADD COLUMN IF NOT EXISTS "match_number" INTEGER,
+    ADD COLUMN IF NOT EXISTS "match_label" TEXT,
+    ADD COLUMN IF NOT EXISTS "team_a_id" TEXT,
+    ADD COLUMN IF NOT EXISTS "team_b_id" TEXT,
+    ADD COLUMN IF NOT EXISTS "scheduled_at" TIMESTAMP(3),
+    ADD COLUMN IF NOT EXISTS "venue" TEXT,
+    ADD COLUMN IF NOT EXISTS "source" TEXT NOT NULL DEFAULT 'live';
+
+  ALTER TABLE "players" ADD COLUMN IF NOT EXISTS "source" TEXT NOT NULL DEFAULT 'live';
+
+  CREATE INDEX IF NOT EXISTS "idx_matches_tournament" ON "matches" ("tournament_id");
+  CREATE INDEX IF NOT EXISTS "idx_ball_events_match" ON "ball_events" ("match_id");
+
+  CREATE TABLE IF NOT EXISTS "app_meta" (
+    "key" TEXT PRIMARY KEY,
+    "value" TEXT NOT NULL
+  );
+`
 
 export function ensureTables(pglite: PGlite): Promise<void> {
   if (!globalForPrisma.initPromise) {
@@ -245,6 +302,18 @@ export function ensureTables(pglite: PGlite): Promise<void> {
       `)
       } catch {
         // safe ignore in concurrent build workers
+      }
+      try {
+        await pglite.exec(TOURNAMENT_DDL)
+      } catch (err) {
+        console.error('[cricengine] tournament tables:', err)
+      }
+      // Load historical records (tournaments + one-off matches). Never blocks the app on bad data.
+      try {
+        const { applySeed } = await import('./seed/apply')
+        await applySeed(pglite)
+      } catch (err) {
+        console.error('[cricengine] seed load skipped:', err)
       }
     })()
   }
