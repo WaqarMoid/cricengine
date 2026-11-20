@@ -1,1 +1,718 @@
-[]
+[
+  {
+    "fixture": "H12-M02",
+    "toss": {
+      "winner": "TTN",
+      "decision": "BAT"
+    },
+    "innings": [
+      {
+        "battingOrder": [
+          "P29",
+          "P31",
+          "P32",
+          "P33",
+          "P34",
+          "P35",
+          "P30"
+        ],
+        "overs": [
+          {
+            "bowler": "P36",
+            "balls": "1 4@COVER 1 6@LONG_ON . 1"
+          },
+          {
+            "bowler": "P37",
+            "balls": "4@POINT 1 W:c:P38 2 4@MID_WICKET ."
+          },
+          {
+            "bowler": "P38",
+            "balls": "1 6@LONG_OFF 1 2 4@COVER ."
+          },
+          {
+            "bowler": "P39",
+            "balls": "2 1 1 6@MID_WICKET . 1"
+          },
+          {
+            "bowler": "P40",
+            "balls": "4@SQUARE_LEG 1 6@LONG_ON W:b 1 1"
+          },
+          {
+            "bowler": "P36",
+            "balls": "1 4@COVER 1 4@POINT 1 1"
+          },
+          {
+            "bowler": "P37",
+            "balls": "2 1 4@MID_WICKET 1 2 1"
+          },
+          {
+            "bowler": "P38",
+            "balls": "6@LONG_OFF 1 W:c:P36 2 4@COVER 1"
+          },
+          {
+            "bowler": "P39",
+            "balls": "1 4@SQUARE_LEG 1 4@LONG_ON 1 1"
+          },
+          {
+            "bowler": "P40",
+            "balls": "2 1 6@MID_WICKET 2 1 1"
+          }
+        ]
+      },
+      {
+        "battingOrder": [
+          "P36",
+          "P37",
+          "P38",
+          "P39",
+          "P40",
+          "P42",
+          "P41"
+        ],
+        "overs": [
+          {
+            "bowler": "P29",
+            "balls": "1 4@COVER . 1 1 1"
+          },
+          {
+            "bowler": "P31",
+            "balls": "1 W:c:P33 1 4@POINT 1 2"
+          },
+          {
+            "bowler": "P32",
+            "balls": "2 1 1 4@MID_WICKET 1 1"
+          },
+          {
+            "bowler": "P33",
+            "balls": "1 2 W:b 1 2 2"
+          },
+          {
+            "bowler": "P34",
+            "balls": "1 6@LONG_ON 1 2 . 1"
+          },
+          {
+            "bowler": "P29",
+            "balls": "2 1 4@COVER 1 . 1"
+          },
+          {
+            "bowler": "P31",
+            "balls": "1 2 W:c:P29 1 4@SQUARE_LEG 2"
+          },
+          {
+            "bowler": "P32",
+            "balls": "4@POINT 1 1 2 1 1"
+          },
+          {
+            "bowler": "P33",
+            "balls": "2 1 W:ro:P31 1 4@LONG_OFF 2"
+          },
+          {
+            "bowler": "P34",
+            "balls": "1 4@MID_WICKET 1 W:c:P32 2 2"
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "winner": "TTN",
+      "margin": "29 runs"
+    },
+    "notes": "TTN blitzed 124 in a high-scoring masterclass to crush MKS by 29 runs."
+  },
+  {
+    "fixture": "H12-M04",
+    "toss": {
+      "winner": "RTR",
+      "decision": "BOWL"
+    },
+    "innings": [
+      {
+        "battingOrder": [
+          "P43",
+          "P44",
+          "P45",
+          "P47",
+          "P48",
+          "P49",
+          "P46"
+        ],
+        "overs": [
+          {
+            "bowler": "P51",
+            "balls": ". 1 . 2 1 1"
+          },
+          {
+            "bowler": "P55",
+            "balls": "1 2 W:c:P50 1 1 1"
+          },
+          {
+            "bowler": "P50",
+            "balls": "1 1 2 . 2 1"
+          },
+          {
+            "bowler": "P52",
+            "balls": "4@COVER . W:b 1 2 1"
+          },
+          {
+            "bowler": "P53",
+            "balls": "1 2 1 1 1 1"
+          },
+          {
+            "bowler": "P51",
+            "balls": "2 1 4@MID_WICKET . . 1"
+          },
+          {
+            "bowler": "P55",
+            "balls": "1 2 W:c:P53 1 2 1"
+          },
+          {
+            "bowler": "P50",
+            "balls": "1 4@POINT . 1 1 1"
+          },
+          {
+            "bowler": "P52",
+            "balls": "2 1 W:ro:P51 1 2 2"
+          },
+          {
+            "bowler": "P53",
+            "balls": "1 2 1 2 1 1"
+          }
+        ]
+      },
+      {
+        "battingOrder": [
+          "P50",
+          "P51",
+          "P52",
+          "P53",
+          "P55",
+          "P56",
+          "P54"
+        ],
+        "overs": [
+          {
+            "bowler": "P45",
+            "balls": ". 1 1 . 2 1"
+          },
+          {
+            "bowler": "P48",
+            "balls": "1 2 W:b 1 1 1"
+          },
+          {
+            "bowler": "P43",
+            "balls": "1 1 2 . 2 1"
+          },
+          {
+            "bowler": "P44",
+            "balls": ". 1 W:c:P45 1 2 2"
+          },
+          {
+            "bowler": "P47",
+            "balls": "2 1 1 2 1 1"
+          },
+          {
+            "bowler": "P45",
+            "balls": "1 2 . 2 1 1"
+          },
+          {
+            "bowler": "P48",
+            "balls": "1 1 W:c:P43 1 2 2"
+          },
+          {
+            "bowler": "P43",
+            "balls": "1 2 . 2 1 1"
+          },
+          {
+            "bowler": "P44",
+            "balls": "2 1 W:ro:P48 1 2 2"
+          },
+          {
+            "bowler": "P47",
+            "balls": "1 2 1 2 W:c:P44 1"
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "winner": "LKX",
+      "margin": "4 runs"
+    },
+    "notes": "LKX defended 72 in a gripping low-scoring thriller to edge RTR by 4 runs."
+  },
+  {
+    "fixture": "H12-M06",
+    "toss": {
+      "winner": "TTN",
+      "decision": "BOWL"
+    },
+    "innings": [
+      {
+        "battingOrder": [
+          "P43",
+          "P44",
+          "P45",
+          "P47",
+          "P48",
+          "P49",
+          "P46"
+        ],
+        "overs": [
+          {
+            "bowler": "P29",
+            "balls": "1 . 4@COVER 1 . 1"
+          },
+          {
+            "bowler": "P31",
+            "balls": "1 2 W:b 1 1 2"
+          },
+          {
+            "bowler": "P32",
+            "balls": "2 1 1 4@MID_WICKET . 1"
+          },
+          {
+            "bowler": "P33",
+            "balls": "1 2 W:c:P29 1 2 2"
+          },
+          {
+            "bowler": "P34",
+            "balls": "1 4@LONG_ON 1 2 1 1"
+          },
+          {
+            "bowler": "P29",
+            "balls": "2 1 4@COVER . . 1"
+          },
+          {
+            "bowler": "P31",
+            "balls": "1 4@POINT W:c:P34 1 1 2"
+          },
+          {
+            "bowler": "P32",
+            "balls": "1 2 1 2 2 1"
+          },
+          {
+            "bowler": "P33",
+            "balls": "1 2 W:ro:P31 1 4@SQUARE_LEG 1"
+          },
+          {
+            "bowler": "P34",
+            "balls": "2 1 4@LONG_OFF W:b 1 1"
+          }
+        ]
+      },
+      {
+        "battingOrder": [
+          "P29",
+          "P31",
+          "P32",
+          "P33",
+          "P34",
+          "P35",
+          "P30"
+        ],
+        "overs": [
+          {
+            "bowler": "P45",
+            "balls": "1 4@COVER . 1 1 1"
+          },
+          {
+            "bowler": "P48",
+            "balls": "1 W:c:P43 1 4@POINT 1 2"
+          },
+          {
+            "bowler": "P43",
+            "balls": "2 1 1 4@MID_WICKET . 1"
+          },
+          {
+            "bowler": "P44",
+            "balls": "1 2 W:b 1 2 2"
+          },
+          {
+            "bowler": "P47",
+            "balls": "1 4@LONG_ON 1 2 1 1"
+          },
+          {
+            "bowler": "P45",
+            "balls": "2 1 4@COVER 1 . 1"
+          },
+          {
+            "bowler": "P48",
+            "balls": "1 2 W:c:P47 1 4@SQUARE_LEG 2"
+          },
+          {
+            "bowler": "P43",
+            "balls": "4@POINT 1 1 2 1 1"
+          },
+          {
+            "bowler": "P44",
+            "balls": "2 1 4@LONG_OFF 1 2 1"
+          },
+          {
+            "bowler": "P47",
+            "balls": "2"
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "winner": "TTN",
+      "margin": "3 wickets"
+    },
+    "notes": "TTN made light work of an 86-run chase to register their second win."
+  },
+  {
+    "fixture": "H12-M08",
+    "toss": {
+      "winner": "RTR",
+      "decision": "BOWL"
+    },
+    "innings": [
+      {
+        "battingOrder": [
+          "P36",
+          "P37",
+          "P38",
+          "P39",
+          "P40",
+          "P42",
+          "P41"
+        ],
+        "overs": [
+          {
+            "bowler": "P51",
+            "balls": "1 . 4@COVER 1 . 1"
+          },
+          {
+            "bowler": "P55",
+            "balls": "1 2 W:b 1 2 2"
+          },
+          {
+            "bowler": "P50",
+            "balls": "2 1 1 4@MID_WICKET . 1"
+          },
+          {
+            "bowler": "P52",
+            "balls": "1 2 W:c:P51 1 2 2"
+          },
+          {
+            "bowler": "P53",
+            "balls": "1 4@LONG_ON 1 2 1 1"
+          },
+          {
+            "bowler": "P51",
+            "balls": "2 1 4@COVER 1 . 1"
+          },
+          {
+            "bowler": "P55",
+            "balls": "1 4@POINT W:c:P50 1 1 2"
+          },
+          {
+            "bowler": "P50",
+            "balls": "1 2 1 2 2 1"
+          },
+          {
+            "bowler": "P52",
+            "balls": "1 2 W:ro:P55 1 4@SQUARE_LEG 1"
+          },
+          {
+            "bowler": "P53",
+            "balls": "2 1 4@LONG_OFF W:b 2 1"
+          }
+        ]
+      },
+      {
+        "battingOrder": [
+          "P50",
+          "P51",
+          "P52",
+          "P53",
+          "P55",
+          "P56",
+          "P54"
+        ],
+        "overs": [
+          {
+            "bowler": "P36",
+            "balls": "1 4@COVER 1 4@POINT . 1"
+          },
+          {
+            "bowler": "P37",
+            "balls": "1 W:c:P39 1 6@LONG_ON 1 1"
+          },
+          {
+            "bowler": "P38",
+            "balls": "2 4@MID_WICKET 1 4@COVER . 1"
+          },
+          {
+            "bowler": "P39",
+            "balls": "1 2 1 4@SQUARE_LEG 1 1"
+          },
+          {
+            "bowler": "P40",
+            "balls": "4@LONG_OFF 1 W:b 2 2 2"
+          },
+          {
+            "bowler": "P36",
+            "balls": "1 4@COVER 1 2 1 1"
+          },
+          {
+            "bowler": "P37",
+            "balls": "2 1 4@MID_WICKET 1 2 1"
+          },
+          {
+            "bowler": "P38",
+            "balls": "1 4@POINT 1 2 1 1"
+          },
+          {
+            "bowler": "P39",
+            "balls": "1 1 . 2"
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "winner": "RTR",
+      "margin": "4 wickets"
+    },
+    "notes": "RTR charged to an emphatic 4-wicket victory inside 9 overs against MKS."
+  },
+  {
+    "fixture": "H12-M10",
+    "toss": {
+      "winner": "TTN",
+      "decision": "BAT"
+    },
+    "innings": [
+      {
+        "battingOrder": [
+          "P29",
+          "P31",
+          "P32",
+          "P33",
+          "P34",
+          "P35",
+          "P30"
+        ],
+        "overs": [
+          {
+            "bowler": "P51",
+            "balls": "1 4@COVER . 1 1 1"
+          },
+          {
+            "bowler": "P55",
+            "balls": "1 W:c:P50 1 4@POINT 1 2"
+          },
+          {
+            "bowler": "P50",
+            "balls": "2 1 1 4@MID_WICKET 1 1"
+          },
+          {
+            "bowler": "P52",
+            "balls": "1 2 W:b 1 4@SQUARE_LEG 1"
+          },
+          {
+            "bowler": "P53",
+            "balls": "1 4@LONG_ON 1 2 1 1"
+          },
+          {
+            "bowler": "P51",
+            "balls": "2 1 4@COVER 1 1 1"
+          },
+          {
+            "bowler": "P55",
+            "balls": "1 4@LONG_OFF W:c:P52 2 1 2"
+          },
+          {
+            "bowler": "P50",
+            "balls": "4@POINT 1 1 2 1 1"
+          },
+          {
+            "bowler": "P52",
+            "balls": "2 1 W:ro:P51 1 4@MID_WICKET 2"
+          },
+          {
+            "bowler": "P53",
+            "balls": "1 2 4@COVER 1 1 1"
+          }
+        ]
+      },
+      {
+        "battingOrder": [
+          "P50",
+          "P51",
+          "P52",
+          "P53",
+          "P55",
+          "P56",
+          "P54"
+        ],
+        "overs": [
+          {
+            "bowler": "P29",
+            "balls": ". 1 2 1 2 1"
+          },
+          {
+            "bowler": "P31",
+            "balls": "1 4@COVER W:b . 1 2"
+          },
+          {
+            "bowler": "P32",
+            "balls": "1 2 1 2 1 1"
+          },
+          {
+            "bowler": "P33",
+            "balls": ". 1 W:c:P29 1 2 3"
+          },
+          {
+            "bowler": "P34",
+            "balls": "2 1 4@POINT 1 . 1"
+          },
+          {
+            "bowler": "P29",
+            "balls": "1 W:c:P31 1 4@MID_WICKET . 2"
+          },
+          {
+            "bowler": "P31",
+            "balls": "1 2 1 4@LONG_ON . 1"
+          },
+          {
+            "bowler": "P32",
+            "balls": "1 2 W:ro:P33 1 4@COVER 1"
+          },
+          {
+            "bowler": "P33",
+            "balls": "1 2 1 2 1 1"
+          },
+          {
+            "bowler": "P34",
+            "balls": "2 1 4@LONG_OFF W:c:P32 1 1"
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "winner": "TTN",
+      "margin": "14 runs"
+    },
+    "notes": "TTN sealed top spot in Group B with a composed 14-run defense against RTR."
+  },
+  {
+    "fixture": "H12-M12",
+    "toss": {
+      "winner": "MKS",
+      "decision": "BOWL"
+    },
+    "innings": [
+      {
+        "battingOrder": [
+          "P43",
+          "P44",
+          "P45",
+          "P47",
+          "P48",
+          "P49",
+          "P46"
+        ],
+        "overs": [
+          {
+            "bowler": "P36",
+            "balls": "1 . 4@COVER 1 . 1"
+          },
+          {
+            "bowler": "P37",
+            "balls": "1 2 W:b 1 1 2"
+          },
+          {
+            "bowler": "P38",
+            "balls": "2 1 1 2 1 1"
+          },
+          {
+            "bowler": "P39",
+            "balls": "1 2 W:c:P36 1 2 2"
+          },
+          {
+            "bowler": "P40",
+            "balls": "1 4@LONG_ON 1 1 1 1"
+          },
+          {
+            "bowler": "P36",
+            "balls": "2 1 4@COVER . . 1"
+          },
+          {
+            "bowler": "P37",
+            "balls": "1 4@POINT W:c:P40 1 1 2"
+          },
+          {
+            "bowler": "P38",
+            "balls": "1 2 1 2 1 1"
+          },
+          {
+            "bowler": "P39",
+            "balls": "1 2 W:ro:P37 1 4@SQUARE_LEG 1"
+          },
+          {
+            "bowler": "P40",
+            "balls": "2 1 4@LONG_OFF W:b 1 1"
+          }
+        ]
+      },
+      {
+        "battingOrder": [
+          "P36",
+          "P37",
+          "P38",
+          "P39",
+          "P40",
+          "P42",
+          "P41"
+        ],
+        "overs": [
+          {
+            "bowler": "P45",
+            "balls": "1 4@COVER . 1 1 1"
+          },
+          {
+            "bowler": "P48",
+            "balls": "1 W:c:P43 1 4@POINT . 2"
+          },
+          {
+            "bowler": "P43",
+            "balls": "2 1 1 4@MID_WICKET . 1"
+          },
+          {
+            "bowler": "P44",
+            "balls": "1 2 W:b 1 2 2"
+          },
+          {
+            "bowler": "P47",
+            "balls": "1 4@LONG_ON 1 1 1 1"
+          },
+          {
+            "bowler": "P45",
+            "balls": "2 1 4@COVER . . 1"
+          },
+          {
+            "bowler": "P48",
+            "balls": "1 2 W:c:P45 1 4@SQUARE_LEG 1"
+          },
+          {
+            "bowler": "P43",
+            "balls": "4@POINT 1 1 1 1 1"
+          },
+          {
+            "bowler": "P44",
+            "balls": "2 1 W:ro:P47 1 4@LONG_OFF 2"
+          },
+          {
+            "bowler": "P47",
+            "balls": "1 . 4@MID_WICKET"
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "winner": "MKS",
+      "margin": "2 wickets"
+    },
+    "notes": "MKS chased down 83 with 3 balls to spare to secure a dramatic 2-wicket victory."
+  }
+]

@@ -6,14 +6,12 @@ const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
 })
 
 const raleway = Raleway({
   subsets: ['latin'],
   variable: '--font-raleway',
   display: 'swap',
-  weight: ['300', '400', '500', '600'],
 })
 
 export const metadata: Metadata = {

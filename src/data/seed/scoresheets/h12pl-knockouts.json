@@ -1,1 +1,362 @@
-[]
+[
+  {
+    "fixture": "H12-SF1",
+    "toss": {
+      "winner": "RTR",
+      "decision": "BOWL"
+    },
+    "innings": [
+      {
+        "battingOrder": [
+          "P15",
+          "P16",
+          "P18",
+          "P19",
+          "P21",
+          "P20",
+          "P17"
+        ],
+        "overs": [
+          {
+            "bowler": "P51",
+            "balls": "1 4@COVER . 2 2 1"
+          },
+          {
+            "bowler": "P55",
+            "balls": "2 1 W:c:P50 1 4@POINT 1"
+          },
+          {
+            "bowler": "P50",
+            "balls": "1 6@LONG_ON 1 . 2 1"
+          },
+          {
+            "bowler": "P52",
+            "balls": "2 1 1 4@MID_WICKET 1 1"
+          },
+          {
+            "bowler": "P53",
+            "balls": "4@SQUARE_LEG 1 6@LONG_OFF W:b . 1"
+          },
+          {
+            "bowler": "P51",
+            "balls": "1 2 1 4@COVER . 1"
+          },
+          {
+            "bowler": "P55",
+            "balls": "2 1 4@MID_WICKET 1 1 1"
+          },
+          {
+            "bowler": "P50",
+            "balls": "4@LONG_ON 1 W:c:P51 2 2 2"
+          },
+          {
+            "bowler": "P52",
+            "balls": "1 2 1 4@POINT 1 1"
+          },
+          {
+            "bowler": "P53",
+            "balls": "2 1 4@COVER 1 1 1"
+          }
+        ]
+      },
+      {
+        "battingOrder": [
+          "P50",
+          "P51",
+          "P52",
+          "P53",
+          "P55",
+          "P56",
+          "P54"
+        ],
+        "overs": [
+          {
+            "bowler": "P15",
+            "balls": ". 1 2 1 1 1"
+          },
+          {
+            "bowler": "P16",
+            "balls": "1 4@COVER W:b . 1 1"
+          },
+          {
+            "bowler": "P18",
+            "balls": "1 2 1 2 1 1"
+          },
+          {
+            "bowler": "P19",
+            "balls": ". 1 W:c:P16 1 4@POINT 1"
+          },
+          {
+            "bowler": "P21",
+            "balls": "1 2 1 2 1 1"
+          },
+          {
+            "bowler": "P15",
+            "balls": "1 W:c:P18 1 4@MID_WICKET . 1"
+          },
+          {
+            "bowler": "P16",
+            "balls": "2 1 1 4@LONG_ON . 1"
+          },
+          {
+            "bowler": "P18",
+            "balls": "1 2 W:ro:P15 1 2 2"
+          },
+          {
+            "bowler": "P19",
+            "balls": "1 4@COVER 1 1 1 1"
+          },
+          {
+            "bowler": "P21",
+            "balls": "2 1 4@SQUARE_LEG W:c:P19 1 1"
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "winner": "WCW",
+      "margin": "24 runs"
+    },
+    "notes": "WCW dominated RTR by 24 runs to storm into the final."
+  },
+  {
+    "fixture": "H12-SF2",
+    "toss": {
+      "winner": "PPK",
+      "decision": "BOWL"
+    },
+    "innings": [
+      {
+        "battingOrder": [
+          "P29",
+          "P31",
+          "P32",
+          "P33",
+          "P34",
+          "P35",
+          "P30"
+        ],
+        "overs": [
+          {
+            "bowler": "P02",
+            "balls": "1 4@COVER . 1 1 1"
+          },
+          {
+            "bowler": "P05",
+            "balls": "1 W:c:P03 1 4@POINT . 2"
+          },
+          {
+            "bowler": "P01",
+            "balls": "2 1 1 4@MID_WICKET . 1"
+          },
+          {
+            "bowler": "P03",
+            "balls": "1 2 W:b 1 2 2"
+          },
+          {
+            "bowler": "P04",
+            "balls": "1 4@LONG_ON 1 2 1 1"
+          },
+          {
+            "bowler": "P02",
+            "balls": "2 1 4@COVER 1 . 1"
+          },
+          {
+            "bowler": "P05",
+            "balls": "1 4@SQUARE_LEG W:c:P01 2 1 2"
+          },
+          {
+            "bowler": "P01",
+            "balls": "1 2 1 4@POINT 1 1"
+          },
+          {
+            "bowler": "P03",
+            "balls": "6@MID_WICKET 1 W:ro:P05 1 2 1"
+          },
+          {
+            "bowler": "P04",
+            "balls": "1 2 4@LONG_OFF 1 1 1"
+          }
+        ]
+      },
+      {
+        "battingOrder": [
+          "P02",
+          "P01",
+          "P03",
+          "P04",
+          "P05",
+          "P06",
+          "P07"
+        ],
+        "overs": [
+          {
+            "bowler": "P29",
+            "balls": "1 4@COVER . 1 1 1"
+          },
+          {
+            "bowler": "P31",
+            "balls": "1 W:c:P33 1 4@POINT . 2"
+          },
+          {
+            "bowler": "P32",
+            "balls": "2 1 1 4@MID_WICKET . 1"
+          },
+          {
+            "bowler": "P33",
+            "balls": "1 2 W:b 1 2 2"
+          },
+          {
+            "bowler": "P34",
+            "balls": "1 4@LONG_ON 1 2 1 1"
+          },
+          {
+            "bowler": "P29",
+            "balls": "2 1 4@COVER 1 . 1"
+          },
+          {
+            "bowler": "P31",
+            "balls": "1 2 W:c:P29 1 4@SQUARE_LEG 1"
+          },
+          {
+            "bowler": "P32",
+            "balls": "4@POINT 1 2 1 2 1"
+          },
+          {
+            "bowler": "P33",
+            "balls": "2 4@MID_WICKET 1 W:ro:P31 1 6@LONG_OFF"
+          },
+          {
+            "bowler": "P34",
+            "balls": "1 2 . 1 4@COVER"
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "winner": "PPK",
+      "margin": "2 wickets"
+    },
+    "notes": "PPK edged unbeaten TTN in a classic last-over semi-final thriller by 2 wickets."
+  },
+  {
+    "fixture": "H12-FINAL",
+    "toss": {
+      "winner": "PPK",
+      "decision": "BOWL"
+    },
+    "innings": [
+      {
+        "battingOrder": [
+          "P15",
+          "P16",
+          "P18",
+          "P19",
+          "P21",
+          "P20",
+          "P17"
+        ],
+        "overs": [
+          {
+            "bowler": "P02",
+            "balls": "1 4@COVER . 2 2 1"
+          },
+          {
+            "bowler": "P05",
+            "balls": "2 1 W:c:P03 1 4@POINT 1"
+          },
+          {
+            "bowler": "P01",
+            "balls": "1 6@LONG_ON 1 . 2 1"
+          },
+          {
+            "bowler": "P03",
+            "balls": "2 1 1 4@MID_WICKET 1 1"
+          },
+          {
+            "bowler": "P04",
+            "balls": "4@SQUARE_LEG 1 6@LONG_OFF W:b . 1"
+          },
+          {
+            "bowler": "P02",
+            "balls": "1 4@COVER 1 2 1 1"
+          },
+          {
+            "bowler": "P05",
+            "balls": "2 1 4@MID_WICKET 1 2 1"
+          },
+          {
+            "bowler": "P01",
+            "balls": "4@LONG_ON 1 W:c:P05 2 2 2"
+          },
+          {
+            "bowler": "P03",
+            "balls": "1 4@POINT 1 W:ro:P01 2 2"
+          },
+          {
+            "bowler": "P04",
+            "balls": "2 1 4@COVER 1 1 1"
+          }
+        ]
+      },
+      {
+        "battingOrder": [
+          "P02",
+          "P01",
+          "P03",
+          "P04",
+          "P05",
+          "P06",
+          "P07"
+        ],
+        "overs": [
+          {
+            "bowler": "P15",
+            "balls": "1 4@COVER . 2 1 1"
+          },
+          {
+            "bowler": "P16",
+            "balls": "2 1 W:c:P18 1 4@POINT 1"
+          },
+          {
+            "bowler": "P18",
+            "balls": "1 6@LONG_ON 1 . 2 1"
+          },
+          {
+            "bowler": "P19",
+            "balls": "2 1 1 4@MID_WICKET 1 1"
+          },
+          {
+            "bowler": "P21",
+            "balls": "4@SQUARE_LEG 1 6@LONG_OFF W:b . 1"
+          },
+          {
+            "bowler": "P15",
+            "balls": "1 4@COVER 1 2 1 1"
+          },
+          {
+            "bowler": "P16",
+            "balls": "2 1 4@MID_WICKET 1 2 1"
+          },
+          {
+            "bowler": "P18",
+            "balls": "4@LONG_ON 1 W:c:P15 2 4@POINT 1"
+          },
+          {
+            "bowler": "P19",
+            "balls": "2 4@COVER W:st:P17 1 4@MID_WICKET 2"
+          },
+          {
+            "bowler": "P21",
+            "balls": "1 2 . 1 4@LONG_ON"
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "winner": "PPK",
+      "margin": "2 wickets"
+    },
+    "notes": "Phatta Patakhe clinched the Hall 12 Phatta League 2026 title in a heart-stopping final-over chase!"
+  }
+]

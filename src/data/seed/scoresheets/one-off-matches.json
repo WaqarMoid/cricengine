@@ -1,1 +1,86 @@
-[]
+[
+  {
+    "fixture": "OO-01",
+    "toss": { "winner": "A", "decision": "BAT" },
+    "innings": [
+      {
+        "battingOrder": ["P01", "P57", "P58", "P59", "P60"],
+        "overs": [
+          { "bowler": "P61", "balls": "1 . 4@COVER 1 wd 2 ." },
+          { "bowler": "P62", "balls": "2 1 W:c:P64 . 1 4@LONG_ON" },
+          { "bowler": "P63", "balls": "1 . 6@MID_WICKET 1 2 ." },
+          { "bowler": "P61", "balls": "1 W:b . 1 4@POINT 1" },
+          { "bowler": "P62", "balls": "2 1 W:ro:P61 wd 1 4@MID_WICKET 1" },
+          { "bowler": "P63", "balls": "1 2 . 1 4@LONG_OFF ." }
+        ]
+      },
+      {
+        "battingOrder": ["P61", "P62", "P63", "P64", "P65"],
+        "overs": [
+          { "bowler": "P58", "balls": "4@COVER 1 . 2 1 2" },
+          { "bowler": "P57", "balls": ". 1 4@MID_WICKET W:c:P59 . 1" },
+          { "bowler": "P01", "balls": "1 6@LONG_ON 1 . 2 1" },
+          { "bowler": "P58", "balls": "4@POINT 1 W:b . 1 4@COVER" },
+          { "bowler": "P57", "balls": "1 2 6@LONG_OFF . 1 2" },
+          { "bowler": "P01", "balls": ". . 4@MID_WICKET" }
+        ]
+      }
+    ],
+    "expected": { "winner": "B", "margin": "2 wickets" },
+    "notes": "Wing D chased down 53 with 3 balls to spare in a tense 6-over courtyard clash."
+  },
+  {
+    "fixture": "OO-02",
+    "toss": { "winner": "A", "decision": "BAT" },
+    "innings": [
+      {
+        "battingOrder": ["P66", "P67", "P08", "P15"],
+        "overs": [
+          { "bowler": "P29", "balls": ". 1 . 2 wd 1 ." },
+          { "bowler": "P22", "balls": "4@COVER . 1 W:b 1 ." },
+          { "bowler": "P29", "balls": "1 2 4@POINT W:c:P68 . 1" },
+          { "bowler": "P22", "balls": "2 1 6@MID_WICKET 1 2 1" }
+        ]
+      },
+      {
+        "battingOrder": ["P68", "P69", "P22", "P29"],
+        "overs": [
+          { "bowler": "P15", "balls": ". 1 . 1 2 ." },
+          { "bowler": "P67", "balls": "4@SQUARE_LEG 1 W:c:P15 . 1 1" },
+          { "bowler": "P15", "balls": "2 . 1 4@COVER W:b 1" },
+          { "bowler": "P67", "balls": "1 2 . 4@LONG_ON . 1" }
+        ]
+      }
+    ],
+    "expected": { "winner": "A", "margin": "5 runs" },
+    "notes": "Early Risers successfully defended 32 by 5 runs in a low-scoring 4-over lawn thriller."
+  },
+  {
+    "fixture": "OO-03",
+    "toss": { "winner": "B", "decision": "BOWL" },
+    "innings": [
+      {
+        "battingOrder": ["P02", "P36", "P43", "P50", "P70"],
+        "overs": [
+          { "bowler": "P71", "balls": "4@COVER 1 6@MID_WICKET . 2 1" },
+          { "bowler": "P72", "balls": "2 4@POINT 1 W:c:P24 wd 1 2" },
+          { "bowler": "P10", "balls": "1 6@LONG_ON 1 . 2 1" },
+          { "bowler": "P71", "balls": "4@LONG_OFF W:b 1 2 4@MID_WICKET 1" },
+          { "bowler": "P72", "balls": "1 2 1 4@COVER 1 1" }
+        ]
+      },
+      {
+        "battingOrder": ["P71", "P72", "P10", "P24", "P47"],
+        "overs": [
+          { "bowler": "P02", "balls": "1 4@COVER . 1 2 ." },
+          { "bowler": "P36", "balls": "2 1 W:c:P50 . 1 4@MID_WICKET" },
+          { "bowler": "P43", "balls": "1 2 W:b 1 6@LONG_ON 1" },
+          { "bowler": "P02", "balls": ". 1 4@POINT 1 W:c:P36 1" },
+          { "bowler": "P36", "balls": "2 4@COVER 1 2 2 1" }
+        ]
+      }
+    ],
+    "expected": { "winner": "A", "margin": "12 runs" },
+    "notes": "Second Floor blasted 58 in 5 overs to win the post-Diwali derby by 12 runs."
+  }
+]

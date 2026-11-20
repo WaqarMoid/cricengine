@@ -1,1 +1,718 @@
-[]
+[
+  {
+    "fixture": "H12-M01",
+    "toss": {
+      "winner": "PPK",
+      "decision": "BAT"
+    },
+    "innings": [
+      {
+        "battingOrder": [
+          "P02",
+          "P03",
+          "P01",
+          "P04",
+          "P05",
+          "P06",
+          "P07"
+        ],
+        "overs": [
+          {
+            "bowler": "P13",
+            "balls": "1 4@COVER . 1 2 ."
+          },
+          {
+            "bowler": "P09",
+            "balls": "1 2 W:c:P10 1 4@MID_WICKET 1"
+          },
+          {
+            "bowler": "P10",
+            "balls": "2 1 6@LONG_ON . 1 1"
+          },
+          {
+            "bowler": "P11",
+            "balls": "1 W:b . 1 4@POINT 1"
+          },
+          {
+            "bowler": "P12",
+            "balls": "2 1 4@COVER 1 1 1"
+          },
+          {
+            "bowler": "P13",
+            "balls": "4@SQUARE_LEG 1 2 4@LONG_OFF . 1"
+          },
+          {
+            "bowler": "P09",
+            "balls": "1 2 W:c:P13 1 2 2"
+          },
+          {
+            "bowler": "P10",
+            "balls": "1 4@COVER 1 2 1 1"
+          },
+          {
+            "bowler": "P11",
+            "balls": "2 1 4@MID_WICKET W:c:P12 1 1"
+          },
+          {
+            "bowler": "P12",
+            "balls": "2 1 4@LONG_ON 1 1 1"
+          }
+        ]
+      },
+      {
+        "battingOrder": [
+          "P08",
+          "P09",
+          "P10",
+          "P11",
+          "P12",
+          "P13",
+          "P14"
+        ],
+        "overs": [
+          {
+            "bowler": "P02",
+            "balls": ". 1 . 2 1 1"
+          },
+          {
+            "bowler": "P05",
+            "balls": "1 4@COVER W:b . 1 1"
+          },
+          {
+            "bowler": "P03",
+            "balls": "1 2 1 2 1 1"
+          },
+          {
+            "bowler": "P04",
+            "balls": ". 1 W:c:P02 1 2 2"
+          },
+          {
+            "bowler": "P01",
+            "balls": ". 1 W:b 1 1 1"
+          },
+          {
+            "bowler": "P02",
+            "balls": "2 1 4@MID_WICKET 1 . 1"
+          },
+          {
+            "bowler": "P01",
+            "balls": "1 2 W:c:P05 1 1 1"
+          },
+          {
+            "bowler": "P05",
+            "balls": "1 1 2 1 2 1"
+          },
+          {
+            "bowler": "P03",
+            "balls": "1 4@POINT W:ro:P01 1 1 1"
+          },
+          {
+            "bowler": "P04",
+            "balls": "1 2 1 4@LONG_ON . 1"
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "winner": "PPK",
+      "margin": "24 runs"
+    },
+    "notes": "PPK posted 94 before Md Waqar Moid led the defense with 2 wickets to secure a 24-run win."
+  },
+  {
+    "fixture": "H12-M03",
+    "toss": {
+      "winner": "CTG",
+      "decision": "BOWL"
+    },
+    "innings": [
+      {
+        "battingOrder": [
+          "P15",
+          "P16",
+          "P18",
+          "P19",
+          "P21",
+          "P20",
+          "P17"
+        ],
+        "overs": [
+          {
+            "bowler": "P28",
+            "balls": "1 4@COVER . 2 2 1"
+          },
+          {
+            "bowler": "P22",
+            "balls": "2 1 W:c:P23 1 4@POINT ."
+          },
+          {
+            "bowler": "P23",
+            "balls": "1 6@LONG_ON 1 . 2 1"
+          },
+          {
+            "bowler": "P25",
+            "balls": "2 1 1 4@MID_WICKET . 1"
+          },
+          {
+            "bowler": "P27",
+            "balls": "4@SQUARE_LEG 1 6@LONG_OFF W:b . 1"
+          },
+          {
+            "bowler": "P28",
+            "balls": "1 2 1 2 1 1"
+          },
+          {
+            "bowler": "P22",
+            "balls": "2 1 4@COVER 1 1 1"
+          },
+          {
+            "bowler": "P23",
+            "balls": "4@LONG_ON 1 W:c:P28 2 2 2"
+          },
+          {
+            "bowler": "P25",
+            "balls": "1 2 1 4@MID_WICKET . 1"
+          },
+          {
+            "bowler": "P27",
+            "balls": "2 1 4@COVER 1 1 1"
+          }
+        ]
+      },
+      {
+        "battingOrder": [
+          "P22",
+          "P23",
+          "P25",
+          "P27",
+          "P28",
+          "P26",
+          "P24"
+        ],
+        "overs": [
+          {
+            "bowler": "P15",
+            "balls": ". 1 2 1 1 1"
+          },
+          {
+            "bowler": "P16",
+            "balls": "1 4@MID_WICKET W:c:P19 1 1 1"
+          },
+          {
+            "bowler": "P18",
+            "balls": "1 1 2 . 2 1"
+          },
+          {
+            "bowler": "P19",
+            "balls": "2 1 4@COVER W:b 1 1"
+          },
+          {
+            "bowler": "P21",
+            "balls": "1 2 1 2 1 1"
+          },
+          {
+            "bowler": "P15",
+            "balls": "1 W:c:P16 1 4@POINT . 1"
+          },
+          {
+            "bowler": "P16",
+            "balls": "2 1 1 4@LONG_ON . 1"
+          },
+          {
+            "bowler": "P18",
+            "balls": "1 2 W:ro:P15 1 2 2"
+          },
+          {
+            "bowler": "P19",
+            "balls": "1 4@COVER 1 2 1 1"
+          },
+          {
+            "bowler": "P21",
+            "balls": "2 1 4@MID_WICKET W:c:P18 1 1"
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "winner": "WCW",
+      "margin": "17 runs"
+    },
+    "notes": "WCW powered to 98 and strangled CTG in the middle overs to win by 17 runs."
+  },
+  {
+    "fixture": "H12-M05",
+    "toss": {
+      "winner": "WCW",
+      "decision": "BAT"
+    },
+    "innings": [
+      {
+        "battingOrder": [
+          "P15",
+          "P16",
+          "P18",
+          "P19",
+          "P21",
+          "P20",
+          "P17"
+        ],
+        "overs": [
+          {
+            "bowler": "P02",
+            "balls": "1 . 4@COVER 1 . 1"
+          },
+          {
+            "bowler": "P05",
+            "balls": "1 2 W:b 1 1 1"
+          },
+          {
+            "bowler": "P01",
+            "balls": "2 1 1 2 1 1"
+          },
+          {
+            "bowler": "P03",
+            "balls": "4@POINT 1 W:c:P05 1 2 2"
+          },
+          {
+            "bowler": "P04",
+            "balls": "1 1 2 . 2 1"
+          },
+          {
+            "bowler": "P02",
+            "balls": "2 1 4@MID_WICKET 1 . 1"
+          },
+          {
+            "bowler": "P05",
+            "balls": "1 4@LONG_ON W:c:P01 2 1 2"
+          },
+          {
+            "bowler": "P01",
+            "balls": "1 2 1 2 1 1"
+          },
+          {
+            "bowler": "P03",
+            "balls": "6@MID_WICKET 1 W:b 1 2 1"
+          },
+          {
+            "bowler": "P04",
+            "balls": "1 2 4@COVER 1 1 1"
+          }
+        ]
+      },
+      {
+        "battingOrder": [
+          "P02",
+          "P01",
+          "P03",
+          "P04",
+          "P05",
+          "P06",
+          "P07"
+        ],
+        "overs": [
+          {
+            "bowler": "P15",
+            "balls": "1 4@COVER . 1 1 1"
+          },
+          {
+            "bowler": "P16",
+            "balls": "1 W:c:P18 1 4@POINT . 1"
+          },
+          {
+            "bowler": "P18",
+            "balls": "2 1 1 4@MID_WICKET . 1"
+          },
+          {
+            "bowler": "P19",
+            "balls": "1 2 W:b 1 2 2"
+          },
+          {
+            "bowler": "P21",
+            "balls": "1 4@LONG_ON 1 2 1 1"
+          },
+          {
+            "bowler": "P15",
+            "balls": "2 1 4@COVER 1 . 1"
+          },
+          {
+            "bowler": "P16",
+            "balls": "1 2 W:c:P15 1 2 2"
+          },
+          {
+            "bowler": "P18",
+            "balls": "4@SQUARE_LEG 1 2 1 2 1"
+          },
+          {
+            "bowler": "P19",
+            "balls": "2 4@MID_WICKET 1 4@COVER . 1"
+          },
+          {
+            "bowler": "P21",
+            "balls": "1 2 . 2"
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "winner": "PPK",
+      "margin": "3 wickets"
+    },
+    "notes": "Md Waqar Moid marshalled a thrilling chase to see PPK home with 2 balls to spare."
+  },
+  {
+    "fixture": "H12-M07",
+    "toss": {
+      "winner": "MMX",
+      "decision": "BAT"
+    },
+    "innings": [
+      {
+        "battingOrder": [
+          "P08",
+          "P09",
+          "P10",
+          "P11",
+          "P12",
+          "P13",
+          "P14"
+        ],
+        "overs": [
+          {
+            "bowler": "P28",
+            "balls": "1 4@COVER . 1 1 1"
+          },
+          {
+            "bowler": "P22",
+            "balls": "1 W:c:P25 1 4@POINT . 1"
+          },
+          {
+            "bowler": "P23",
+            "balls": "2 1 1 4@MID_WICKET . 1"
+          },
+          {
+            "bowler": "P25",
+            "balls": "1 2 W:b 1 2 2"
+          },
+          {
+            "bowler": "P27",
+            "balls": "1 4@LONG_ON 1 2 1 1"
+          },
+          {
+            "bowler": "P28",
+            "balls": "2 1 4@COVER 1 . 1"
+          },
+          {
+            "bowler": "P22",
+            "balls": "1 2 W:c:P28 1 2 2"
+          },
+          {
+            "bowler": "P23",
+            "balls": "4@SQUARE_LEG 1 1 2 1 1"
+          },
+          {
+            "bowler": "P25",
+            "balls": "2 1 W:ro:P22 1 4@MID_WICKET 1"
+          },
+          {
+            "bowler": "P27",
+            "balls": "1 2 4@LONG_OFF 1 1 1"
+          }
+        ]
+      },
+      {
+        "battingOrder": [
+          "P22",
+          "P23",
+          "P25",
+          "P27",
+          "P28",
+          "P26",
+          "P24"
+        ],
+        "overs": [
+          {
+            "bowler": "P13",
+            "balls": ". 1 2 1 1 1"
+          },
+          {
+            "bowler": "P09",
+            "balls": "1 4@COVER W:b . 1 1"
+          },
+          {
+            "bowler": "P10",
+            "balls": "1 2 1 2 1 1"
+          },
+          {
+            "bowler": "P11",
+            "balls": ". 1 W:c:P13 1 2 2"
+          },
+          {
+            "bowler": "P12",
+            "balls": "2 1 4@POINT 1 . 1"
+          },
+          {
+            "bowler": "P13",
+            "balls": "1 W:c:P09 1 4@MID_WICKET . 2"
+          },
+          {
+            "bowler": "P09",
+            "balls": "1 2 1 1 1 1"
+          },
+          {
+            "bowler": "P10",
+            "balls": "1 2 W:ro:P12 1 2 2"
+          },
+          {
+            "bowler": "P11",
+            "balls": "1 4@COVER 1 2 . 1"
+          },
+          {
+            "bowler": "P12",
+            "balls": "2 1 4@LONG_ON W:c:P10 . 1"
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "winner": "MMX",
+      "margin": "12 runs"
+    },
+    "notes": "MMX defended 88 with disciplined spin to register their first tournament victory."
+  },
+  {
+    "fixture": "H12-M09",
+    "toss": {
+      "winner": "CTG",
+      "decision": "BAT"
+    },
+    "innings": [
+      {
+        "battingOrder": [
+          "P22",
+          "P23",
+          "P25",
+          "P27",
+          "P28",
+          "P26",
+          "P24"
+        ],
+        "overs": [
+          {
+            "bowler": "P02",
+            "balls": "1 4@COVER . 1 1 1"
+          },
+          {
+            "bowler": "P05",
+            "balls": "1 W:c:P03 1 4@POINT . 1"
+          },
+          {
+            "bowler": "P01",
+            "balls": "2 1 1 4@MID_WICKET . 1"
+          },
+          {
+            "bowler": "P03",
+            "balls": "1 2 W:b 1 2 2"
+          },
+          {
+            "bowler": "P04",
+            "balls": "1 4@LONG_ON 1 2 1 1"
+          },
+          {
+            "bowler": "P02",
+            "balls": "2 1 4@COVER 1 . 1"
+          },
+          {
+            "bowler": "P05",
+            "balls": "1 2 W:c:P01 1 4@MID_WICKET 1"
+          },
+          {
+            "bowler": "P01",
+            "balls": "1 4@SQUARE_LEG 1 1 1 1"
+          },
+          {
+            "bowler": "P03",
+            "balls": "2 1 W:ro:P02 1 4@LONG_OFF 2"
+          },
+          {
+            "bowler": "P04",
+            "balls": "1 2 4@COVER 1 1 1"
+          }
+        ]
+      },
+      {
+        "battingOrder": [
+          "P02",
+          "P01",
+          "P03",
+          "P04",
+          "P05",
+          "P06",
+          "P07"
+        ],
+        "overs": [
+          {
+            "bowler": "P28",
+            "balls": ". 1 2 1 1 1"
+          },
+          {
+            "bowler": "P22",
+            "balls": "1 4@COVER W:b . 1 2"
+          },
+          {
+            "bowler": "P23",
+            "balls": "1 2 1 2 1 1"
+          },
+          {
+            "bowler": "P25",
+            "balls": ". 1 W:c:P28 1 2 3"
+          },
+          {
+            "bowler": "P27",
+            "balls": "2 1 4@POINT 1 . 1"
+          },
+          {
+            "bowler": "P28",
+            "balls": "1 W:c:P22 1 4@MID_WICKET . 2"
+          },
+          {
+            "bowler": "P22",
+            "balls": "1 2 1 4@LONG_ON . 1"
+          },
+          {
+            "bowler": "P23",
+            "balls": "4@COVER 1 W:c:P27 2 1 2"
+          },
+          {
+            "bowler": "P25",
+            "balls": "1 4@MID_WICKET 1 2 1 1"
+          },
+          {
+            "bowler": "P27",
+            "balls": "2 1 4@LONG_OFF W:ro:P23 1 1"
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "winner": "CTG",
+      "margin": "5 runs"
+    },
+    "notes": "CTG stunned tournament favorites PPK in a 5-run thriller after defending 89."
+  },
+  {
+    "fixture": "H12-M11",
+    "toss": {
+      "winner": "WCW",
+      "decision": "BOWL"
+    },
+    "innings": [
+      {
+        "battingOrder": [
+          "P08",
+          "P09",
+          "P10",
+          "P11",
+          "P12",
+          "P13",
+          "P14"
+        ],
+        "overs": [
+          {
+            "bowler": "P15",
+            "balls": "1 . 4@COVER 1 . 1"
+          },
+          {
+            "bowler": "P16",
+            "balls": "1 2 W:b 1 1 1"
+          },
+          {
+            "bowler": "P18",
+            "balls": "2 1 1 2 1 1"
+          },
+          {
+            "bowler": "P19",
+            "balls": "4@POINT 1 W:c:P15 1 2 1"
+          },
+          {
+            "bowler": "P21",
+            "balls": "1 1 2 . 2 1"
+          },
+          {
+            "bowler": "P15",
+            "balls": "2 1 4@MID_WICKET . . 1"
+          },
+          {
+            "bowler": "P16",
+            "balls": "1 4@LONG_ON W:c:P21 1 1 2"
+          },
+          {
+            "bowler": "P18",
+            "balls": "1 2 1 2 1 1"
+          },
+          {
+            "bowler": "P19",
+            "balls": "1 2 W:ro:P16 1 2 2"
+          },
+          {
+            "bowler": "P21",
+            "balls": "2 1 4@COVER W:b 1 1"
+          }
+        ]
+      },
+      {
+        "battingOrder": [
+          "P15",
+          "P16",
+          "P18",
+          "P19",
+          "P21",
+          "P20",
+          "P17"
+        ],
+        "overs": [
+          {
+            "bowler": "P13",
+            "balls": "1 4@COVER . 2 1 1"
+          },
+          {
+            "bowler": "P09",
+            "balls": "2 1 W:c:P10 1 4@POINT ."
+          },
+          {
+            "bowler": "P10",
+            "balls": "1 6@LONG_ON 1 . 1 1"
+          },
+          {
+            "bowler": "P11",
+            "balls": "2 1 1 4@MID_WICKET . 1"
+          },
+          {
+            "bowler": "P12",
+            "balls": "1 4@SQUARE_LEG 1 2 1 1"
+          },
+          {
+            "bowler": "P13",
+            "balls": "2 1 4@COVER 1 . 1"
+          },
+          {
+            "bowler": "P09",
+            "balls": "1 2 W:c:P13 1 2 2"
+          },
+          {
+            "bowler": "P10",
+            "balls": "4@LONG_ON 1 2 2 1 1"
+          },
+          {
+            "bowler": "P11",
+            "balls": "1 1 2 . 2"
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "winner": "WCW",
+      "margin": "4 wickets"
+    },
+    "notes": "WCW cruised to an easy 4-wicket win over MMX to lock in their qualification spot."
+  }
+]
